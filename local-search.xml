@@ -4,25 +4,6 @@
   
   
   <entry>
-    <title>article testz</title>
-    <link href="/2020/11/19/article-testz/"/>
-    <url>/2020/11/19/article-testz/</url>
-    
-    <content type="html"><![CDATA[<p>This is a test article~~</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>test</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hello World</title>
     <link href="/2020/11/16/hello-world/"/>
     <url>/2020/11/16/hello-world/</url>
@@ -30,6 +11,25 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020春招暑期实习-总结</title>
+    <link href="/2020/04/20/2020%E6%98%A5%E6%8B%9B%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/04/20/2020%E6%98%A5%E6%8B%9B%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="2020暑期实习春招"><a href="#2020暑期实习春招" class="headerlink" title="2020暑期实习春招"></a>2020暑期实习春招</h1><p>历时近一个月，紧张刺激的春招终于告一段落。面试一周，等结果半个月，所幸功夫不负有心人，我拿到了心心念念的阿里offer。在尽情浪了两天后还是决定对这次春招找实习的过程进行一次回顾和总结，方便为秋招进一步提高和完善做准备，同时也可以分享给大家做一些参考。   </p><h2 id="一、Offer情况"><a href="#一、Offer情况" class="headerlink" title="一、Offer情况"></a>一、Offer情况</h2><p>我从本科阶段开始一直在学习和参与一些Java Web项目的开发，加上保研结束进入实验室的两年来也都在做Java后端的开发，所以春招投递的岗位自然都是Java开发相关。   </p><p>春招期间我面了三家公司，分别是美团、阿里、腾讯，最终成功收到三家公司的offer，具体如下：  </p><ul><li>美团到家事业群-外卖配送技术部-系统开发岗位-Base北京    </li><li>腾讯云与智慧产业事业群(CSIG)-软件后台开发岗位-Base成都  </li><li>阿里云智能事业群-阿里云-Java研发工程师-Base杭州    </li></ul><p>实习生的Offer待遇方面，公司通常都是根据学历有统一的标准，各大厂的待遇往往也差不多（当然，字节、PDD之流的土豪除外QAQ）。 通常都是</p><p style="text-align:center">薪资福利=（出勤日x工资/天+出勤率x房补/月）</p>具体的大家自己百度即可～   不过相比美团的待遇，腾讯首月会发2000的异地交通补贴还是让我挺意外的。<h2 id="二、春招历程"><a href="#二、春招历程" class="headerlink" title="二、春招历程"></a>二、春招历程</h2><p>根据我的个人经历，我将整个春招的过程可以大致分为如下几个部分：  </p><ul><li><strong>准备阶段</strong>：制作简历，复习知识，整理资料，投递简历    </li><li><strong>进行阶段</strong>：笔试+面试+查漏补缺   </li><li><strong>结果阶段</strong>：漫长的oc等待，与其他公司HR互演（-.-）     </li></ul><p>下面简单介绍一下我在这三个阶段中的一些大概经历和感受，不展开讲细节，详细内容留到后续有空针对每一块写一些经验文章。   </p><h3 id="1-准备阶段"><a href="#1-准备阶段" class="headerlink" title="1. 准备阶段"></a>1. 准备阶段</h3><p>对于找工作的准备，我个人的建议是越早越好，提前一个月为佳，这样节奏可以舒适一些（也没必要太早）。针对岗位的知识面覆盖要广，同时对于关键的常问点要有深入的钻研和理解。<br>今年最大的意外，就是没想到遇到疫情这种尴尬情况。<br>这波疫情对各个公司的春招带了不少不确定因素，另外疫情期间实验室也趁热输出了一波业务需求，所以我整个二月和三月初都在给实验室搬砖，没有时间去尽早地开始复习，同时也错过了阿里的提前批。<br>跟我身边同学的情况，如果二月中旬开始复习刷题准备，三月初就可以拿到一些公司的offer，如字节。    </p><h4 id="关于复习"><a href="#关于复习" class="headerlink" title="关于复习"></a>关于复习</h4><p>关于如何复习，复习哪些知识点，还是留到以后的分享，在这里先粗略的讲一下我的复习过程。        </p><p>因为我平时写Java挺多，实验室的项目也一直没停，很多框架和数据库都有用到，基础知识也都有印象，所以我首先看了两本深入的书籍，分别是《深入理解Java虚拟机》（我买的时候第三版还没出，后来发现微信阅读可以看第三版）和《Java并发编程艺术》。先看这两本书的原因是我对Java虚拟机相关知识了解不够多，并发编程平时用的也不是很多，所以认真看了一遍去弥补了知识的空缺。     </p><p>看完两本书之后就开始<strong>系统地</strong>复习各个科目的知识，复习过程中一定要在脑海中形成知识体系，很多知识点是可以串联起来，或者思想可以相互借鉴，这样在面试的过程中往往就是顺着往下问的问题。这里可以推荐一下两个不错的项目<a href="https://cyc2018.github.io/CS-Notes/">CyC2018/CSNotes</a>和<a href="https://snailclimb.gitee.io/javaguide/#/">JavaGuide</a>，两位作者总结的非常系统全面，给了我非常大的帮助，大家可以Star一下。个人偏向先根据CSNotes进行一次全面的复习，然后对于不够深入或者没提到的可以再去JavaGuide完善自己的知识体系，也可以反过来；不过，对于有些知识点，作者没法花大篇幅去深入讲，还是需要我们自己去查找搜集一些资料进一步深入学习。与此同时，我又将那两本书有<strong>针对性地</strong>看了两遍，并且适当地刷了一些leetcode和剑指offer的题目为笔试和面试中的手撕代码做准备。     </p><p>这里对于算法题要多说一些，这两年的情况是各个大厂对于笔试的重视程度的确都有不小的提高，华为面试也开始撕代码了，阿里以前是内推可以免笔试的，但是今年必须笔试，笔试成绩差可能就不约面试或者面试流程中还要加笔试面。所以我觉得多刷点题目总归是好的，我在大三结束保研成功后，基本没有再去接触过算法相关的东西，所以做阿里笔试就发挥的不是很好，中间又加了一面笔试，还好最后阿里抬了一手，给了offer。所以朋友们多刷点题吧，尤其笔试面试中常见的类型，刷题主要针对简单题和中等题即可，难度不用超过Leetcode中等题，因为据说Hard难度的题目面试官可能也不会😂。    </p><h4 id="投递简历"><a href="#投递简历" class="headerlink" title="投递简历"></a>投递简历</h4><p>简历制作的过程比较痛苦，改了很多次，也请教了学长学姐。简历既不能太空，也不能花里胡哨；哪些内容该写，哪些不该写，都要仔细斟酌，不然都会给自己埋下坑。关于简历制作我准备后面和其他同学讨论总结一波，写一篇专门的文章来讲讲，希望可以给大家秋招一些帮助。    </p><p>在投递简历时，我投递了美团的基础研发平台(Base上海)，不过被北京的外卖配送技术团队截胡捞了，美团也是我最早收到的面试。当时对找工作的面试没有一点经验，出于强烈的求生欲，就没有拒绝面试重新进池子（毕竟北京和上海又能有多少区别呢，还有就是部门还挺核心的^_^）；   </p><p>腾讯我投递了上海，由于腾讯大多数业务都是写C++比较多，我对这方面不了解，也就没有选择意向事业群，最后是被腾讯云数据库产品团队捞起来，Base在成都。这里由于个人对成都这个城市还挺有好感（爱吃辣的我没法拒绝），同时对云计算业务的前景比较看好（个人是阿里云和腾讯云的深度用户），所以也就欣然接受了面试。    </p><p>至于阿里，可以说是我的第一志愿，当时最感兴趣的是蚂蚁金服和阿里云，由于错过了提前批，所以只有一次机会，咨询了实验室的学长学姐并且再三考虑后，决定选择阿里云投递，并且通过一个靠谱的学长内推到他们部门。      </p><p>在这里需要强调一下内推的重要性，熟人内推最大的好处之一就是方便地查询流程和进度，另外可以详细了解部门的业务和情况。不过美团的内推好像没啥用，腾讯的状态在校招官网上比较清楚，也可以加群让HR帮查。因为我投阿里是有靠谱学长内推，所以每一面之后都可以方便地了解到状态，有时还可以聊一下一些面试的小反馈，这些信息我觉得挺关键。         </p><h3 id="2-进行阶段"><a href="#2-进行阶段" class="headerlink" title="2. 进行阶段"></a>2. 进行阶段</h3><p>各个大厂的校招流程基本都大同小异，总结一下可以氛围以下步骤：   </p><ul><li><p>测评：性格测试，主要考察个人性格，团队协作能力，领导能力，乐观悲观，创新型/保守型…… 题目通常都是选择题，不涉及技术或专业知识。很多人可能不重视，但是的确会有公司因为性格测试直接挂掉同学，比如华为～    </p></li><li><p>笔试：客观题(选择题)+问答题+编程算法题，其中客观题和问答题只有部分公司的笔试会有，大多数公司的笔试都是直接2-4道算法题，笔试非常重要，关系着能否收到面试或者是后续的评价。   </p></li><li><p>面试：通常是技术面+HR面，技术面会有多轮，不同公司，不同部门都有区别，就我的经历如下：  </p><ul><li>阿里：3轮技术面+1轮交叉技术面+HR面，阿里往往第2轮或第3轮会是团队leader面，我当时情况特殊，第一面就是团队leader   </li><li>腾讯：2轮技术面+HR面，腾讯第二轮是主管面。   </li><li>美团：3轮技术面，一面是个年轻老哥，二面是团队leader，三面是部门主管。美团没有HR面，三面结束后，HR就打电话来问了一些信息，就给了offer；另外美团有的部门是2面，有的是3面，具体哪些部门区别我就不清楚了。      </li></ul></li></ul><p>根据我自己的面试体验，以及和基友的讨论，不同公司的面试风格和侧重点都是不同的。个人感觉阿里比较看重项目经验，有项目的话，会根据项目聊挺多的，因为每一面都是有记录的，往往一面会问基础知识比较多，后面几面就比较会问一些场景题，或者就聊项目里的一些<strong>“重点”</strong>，并且拓展开一些问题。字节跳动就三面问项目都比较少，而且每一面都会撕代码，有时候面试表现差一些，如果代码撕地好，也可以拉回来，对于刷题党是福音。而我面的另外两家，腾讯一面问了一堆知识，二面纯聊项目；美团一二面问知识，三面聊项目。所以大家准备面试的时候还是要准备一下自己的项目，至于怎么准备，如何去把项目讲好也是一门学问了。     </p><p>技术面试和HR面也不一样，HR都是人精，会从你的只言片语中判断你的性格、品质、优缺点，从而判断你是否适合这个公司，适合这个岗位。很多人觉得到了HR面就稳了，实际上很多公司的HR都有一票否决权，发不发offer，往往在HR一念之间，所以HR面也是需要做一些准备的。   </p><h3 id="3-结果阶段"><a href="#3-结果阶段" class="headerlink" title="3. 结果阶段"></a>3. 结果阶段</h3><p>结果的等待是漫长而煎熬的，我从3.23开始投递简历，一周面完了三家公司的技术面，除了美团4.1发的offer，腾讯和阿里都是到前两天才收到意向书，这个过程中很慌，同时也因为很累导致不想再面别家，虽然做了一些公司的笔试，最近因为收到了阿里腾讯的offer，我也拒绝了后续的面试。   </p><p>等结果通常会有三种消息：   </p><ul><li>感谢信：感谢您投递，综合考虑您不适合…… 其实就是发好人卡了，凉了   </li><li>offer call：HR打来电话告知面试通过，给口头offer   </li><li>意向书：通常都是邮件收到意向书，这时候才能算尘埃落定</li></ul><h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>暑期实习基本都是有转正机会，如果能进入心仪的公司实习，并且顺利通过转正答辩，毕业的工作就有了保障。秋招就不会有什么压力，面试别家也有argue的资本。<br>对于我们学生来说，毕业的工作就决定了我们未来发展的起点，可能就是改变人生的选择，因此找一份好的工作真的很重要，准备地再充分都不为过。这两年因为各种原因，个人感觉IT行业的整体招聘难度变大，竞争愈发激烈，希望我们每个人都能通过自己的努力，斩获满意的offer吧！   </p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>面经</tag>
+      
+    </tags>
     
   </entry>
   
