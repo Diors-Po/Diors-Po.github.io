@@ -233,13 +233,14 @@
 <p>2019年4月22日，发生了一件乌龙事件，哔哩哔哩的后端代码被上传到了GitHub（虽然不是新版本），当时凑热闹下载代码看了一眼，小破站的服务端也是使用Golang进行开发，是近两年才进行的重构；另外，今年暑期在阿里云实习期间也发现团队部分项目也根据需要使用了Golang进行开发，而不是一味再拘泥于Java；由此可见，Golang的优良特性吸引了越来越多的开发者投向其怀抱，我平时接触比较多的Docker、Promethus等等开源项目也都是Golang开发。因此，基于趋势和自己的兴趣，利用最后几个月学生生涯去拓展一下技术栈，似乎是不错的选择。  </p>
 <hr>
 <h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>略过简单的安装步骤，写一个HelloWorld      </p>
-<pre><code class="Go">package main
+<pre><code class="hljs Go"><span class="hljs-keyword">package</span> main
 
-import &quot;fmt&quot;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
 
-func main()  &#123;
-    fmt.Println(&quot;Hello World&quot;)
-&#125;  </code></pre>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>  &#123;
+	fmt.Println(<span class="hljs-string">&quot;Hello World&quot;</span>)
+&#125;</code></pre>
+
 <p>与可以看，到Java类似，主要还是三个部分，首先是包声明<code>package main</code>，然后导入依赖包<code>import &quot;fmt&quot;</code>，最后是具体代码。值得新手注意的一点是Golang对import的内容有严格的要求，<strong>导入的包必须被使用，否则会编译出错</strong>，这是为了防止程序演化中引用不需要的包～～（还好我已经在写Java的过程中养成了快捷键提出无用包的习惯QAQ）<br><img src="http://qkb6ubkpt.hd-bkt.clouddn.com/2.png" srcset="/img/loading.gif" alt="无用包编译出错" title="无用包编译出错">     </p>
 <p>Golang中声明为<code>main</code>的包和函数，根据经验可以想到是具有特殊含义的，即程序的入口。  </p>
 <p>函数的声明和Java类似，但似乎更加灵活，以<code>func</code>开头，后面跟函数名，括号中可以放参数列表，返回值支持多个，返回值列表也可为空，如main函数。</p>
@@ -250,36 +251,36 @@ func main()  &#123;
 <li>在表达式<code>x+y</code>中，<code>+</code>后面可以有换行，但不能在前面</li>
 </ul>
 <p>为了满足Golang对代码格式的严格要求，go提供了gofmt工具对代码以标准格式重写，可以配置ide自动在保存代码时进行格式化。   </p>
-<p>既然是HelloWorld，也就必不可少的认识一下Go提供的一系列command，在命令行中输入<code>go -h</code>可以看到，一些常用的命令，如<code>run</code>,<code>build</code>,<code>fmt</code>……在开发中可以根据需要使用。   </p>
-<pre><code class="bash">Go is a tool for managing Go source code.
+<p>既然是HelloWorld，也就必不可少的认识一下Go提供的一系列command，在命令行中输入<code>go -h</code>可以看到，一些常用的命令，如<code>run</code>,<code>build</code>,<code>fmt</code>……在开发中可以根据需要使用。</p>
+<pre><code class="hljs bash">Go is a tool <span class="hljs-keyword">for</span> managing Go <span class="hljs-built_in">source</span> code.
 Usage:
-        go &lt;command&gt; [arguments]
+        go &lt;<span class="hljs-built_in">command</span>&gt; [arguments]
 The commands are:
 
         bug         start a bug report
         build       compile packages and dependencies
         clean       remove object files and cached files
-        doc         show documentation for package or symbol
-        env         print Go environment information
+        doc         show documentation <span class="hljs-keyword">for</span> package or symbol
+        env         <span class="hljs-built_in">print</span> Go environment information
         fix         update packages to use new APIs
         fmt         gofmt (reformat) package sources
-        generate    generate Go files by processing source
+        generate    generate Go files by processing <span class="hljs-built_in">source</span>
         get         add dependencies to current module and install them
         install     compile and install packages and dependencies
         list        list packages or modules
         mod         module maintenance
         run         compile and run Go program
-        test        test packages
+        <span class="hljs-built_in">test</span>        <span class="hljs-built_in">test</span> packages
         tool        run specified go tool
-        version     print Go version
-        vet         report likely mistakes in packages
+        version     <span class="hljs-built_in">print</span> Go version
+        vet         report likely mistakes <span class="hljs-keyword">in</span> packages
 
-Use &quot;go help &lt;command&gt;&quot; for more information about a command.
-Additional help topics:
+Use <span class="hljs-string">&quot;go help &lt;command&gt;&quot;</span> <span class="hljs-keyword">for</span> more information about a <span class="hljs-built_in">command</span>.
+Additional <span class="hljs-built_in">help</span> topics:
         buildconstraint build constraints
         buildmode       build modes
         c               calling between Go and C
-        cache           build and test caching
+        cache           build and <span class="hljs-built_in">test</span> caching
         environment     environment variables
         filetype        file types
         go.mod          the go.mod file
@@ -290,11 +291,13 @@ Additional help topics:
         modules         modules, module versions, and more
         module-get      module-aware go get
         module-auth     module authentication using go.sum
-        module-private  module configuration for non-public modules
+        module-private  module configuration <span class="hljs-keyword">for</span> non-public modules
         packages        package lists and patterns
         testflag        testing flags
-        testfunc        testing functions
-Use &quot;go help &lt;topic&gt;&quot; for more information about that topic.</code></pre>
+        testfunc        testing <span class="hljs-built_in">functions</span>
+Use <span class="hljs-string">&quot;go help &lt;topic&gt;&quot;</span> <span class="hljs-keyword">for</span> more information about that topic.</code></pre>
+
+
 
             </div>
             <hr>
