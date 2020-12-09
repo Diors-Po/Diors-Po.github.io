@@ -1,0 +1,772 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" type="image/png" href="http://oss.diorspo.cn/logo.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Python入门-1.3 数据类型 - Diors.Po&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <img src="http://oss.diorspo.cn/logo.png" srcset="/img/loading.gif" style="height: 55px;"/>
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Diors.Po</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://third-part-tool.oss-cn-shanghai.aliyuncs.com/images/index_bg_1.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Python入门-1.3 数据类型">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-08 18:45" pubdate>
+        2020年12月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python入门-1.3 数据类型</h1>
+            
+            <div class="markdown-body">
+              <h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3. 数据类型"></a>3. 数据类型</h1><p><a name="1G0fw"></a></p>
+<h2 id="标准数据类型"><a href="#标准数据类型" class="headerlink" title="标准数据类型"></a>标准数据类型</h2><ul>
+<li>Python3 中有六个标准的数据类型：<ul>
+<li>Number（数字）<ul>
+<li>int</li>
+<li>bool</li>
+<li>float</li>
+<li>complex（复数）</li>
+</ul>
+</li>
+<li>String（字符串）</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Sets（集合）</li>
+<li>Dictionary（字典）</li>
+</ul>
+</li>
+</ul>
+<p><br />Python3 的六个标准数据类型中：</p>
+<ul>
+<li><strong>不可变数据（3 个）：</strong>Number（数字）、String（字符串）、Tuple（元组)；</li>
+<li><strong>可变数据（3 个）：</strong>List（列表）、Dictionary（字典）、Set（集合）。<blockquote>
+<p><code>可变类型定义</code>:变量值改变但是变量地址不会改变<br><code>不可变类型定义</code>:变量值改变，变量地址必须改变</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="hljs python"><span class="hljs-comment"># 可变类型</span>
+list1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+print(<span class="hljs-built_in">id</span>(list1)) <span class="hljs-comment">#list1的内存地址</span>
+list2 = list1
+print(<span class="hljs-built_in">id</span>(list2)) <span class="hljs-comment">#list2的内存地址</span>
+list1.remove(<span class="hljs-number">1</span>)
+print(<span class="hljs-built_in">id</span>(list1), <span class="hljs-built_in">id</span>(list2)) <span class="hljs-comment">#修改值后的list1，list2的内存地址</span>
+print(list2)
+
+<span class="hljs-comment"># 不可变类型</span>
+str1 = <span class="hljs-string">&quot;点赞哦&quot;</span>
+str2 = str1
+print(<span class="hljs-built_in">id</span>(str1), <span class="hljs-built_in">id</span>(str2))
+str1 = <span class="hljs-string">&quot;这次一定&quot;</span>
+print(<span class="hljs-built_in">id</span>(str1), <span class="hljs-built_in">id</span>(str2))
+
+print(str1, str2)</code></pre>
+<br />
+<a name="S8pWQ"></a>
+## 类型检查
+> 如何知道一个变量的类型呢？
+
+<ul>
+<li>内置的 type() 函数可以用来查询变量所指的对象类型。（Python是面向对象的语言）</li>
+<li>此外还可以用 isinstance 来判断<pre><code class="hljs python"><span class="hljs-comment"># 使用type()获取类型</span>
+a, b, c, d = <span class="hljs-number">20</span>, <span class="hljs-number">5.5</span>, <span class="hljs-literal">True</span>, <span class="hljs-number">4</span>+<span class="hljs-number">3j</span>
+e = <span class="hljs-string">&quot;Demo&quot;</span>
+print(<span class="hljs-built_in">type</span>(a), <span class="hljs-built_in">type</span>(b), <span class="hljs-built_in">type</span>(c), <span class="hljs-built_in">type</span>(d), <span class="hljs-built_in">type</span>(e))
+<span class="hljs-comment"># 输出</span>
+<span class="hljs-comment"># &lt;class &#x27;int&#x27;&gt; &lt;class &#x27;float&#x27;&gt; &lt;class &#x27;bool&#x27;&gt; &lt;class &#x27;complex&#x27;&gt; &lt;class &#x27;str&#x27;&gt;</span>
+
+<span class="hljs-comment"># isinstance()判断类型</span>
+a = <span class="hljs-number">111</span>
+print(<span class="hljs-built_in">isinstance</span>(a, <span class="hljs-built_in">int</span>))
+<span class="hljs-comment"># 输出</span>
+<span class="hljs-comment"># True</span></code></pre>
+
+
+</li>
+</ul>
+<p><a name="cSSdc"></a></p>
+<h5 id="isinstance-和-type-的区别"><a href="#isinstance-和-type-的区别" class="headerlink" title="isinstance 和 type 的区别"></a>isinstance 和 type 的区别</h5><ul>
+<li>type()不会认为子类是一种父类类型。</li>
+<li>isinstance()会认为子类是一种父类类型。<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>:</span>
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span>(<span class="hljs-params">A</span>):</span>
+    <span class="hljs-keyword">pass</span>
+
+ans_1 = <span class="hljs-built_in">isinstance</span>(A(), A)  <span class="hljs-comment"># returns True</span>
+ans_2 = <span class="hljs-built_in">type</span>(A()) == A      <span class="hljs-comment"># returns True</span>
+ans_3 = <span class="hljs-built_in">isinstance</span>(B(), A)    <span class="hljs-comment"># returns True</span>
+ans_4 = <span class="hljs-built_in">type</span>(B()) == A        <span class="hljs-comment"># returns False</span>
+
+print(ans_1, ans_2, ans_3, ans_4)
+<span class="hljs-comment"># 输出</span>
+<span class="hljs-comment"># True True True False</span></code></pre>
+
+
+</li>
+</ul>
+<p><a name="cV1WB"></a></p>
+<h2 id="Python数据类型转换"><a href="#Python数据类型转换" class="headerlink" title="Python数据类型转换"></a>Python数据类型转换</h2><ul>
+<li>有时候，我们需要对数据内置的类型进行转换，数据类型的转换，你只需要将数据类型作为函数名即可。</li>
+<li>以下几个内置的函数可以执行数据类型之间的转换。这些函数返回一个新的对象，表示转换的值<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(x [,base])</td>
+<td>将x转换为一个整数</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>将x转换到一个浮点数</td>
+</tr>
+<tr>
+<td>complex(real [,imag])</td>
+<td>创建一个复数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td>repr(x)</td>
+<td>将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td>eval(str)</td>
+<td>用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td>tuple(s)</td>
+<td>将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td>list(s)</td>
+<td>将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td>set(s)</td>
+<td>转换为可变集合</td>
+</tr>
+<tr>
+<td>dict(d)</td>
+<td>创建一个字典。d 必须是一个序列 (key,value)元组。</td>
+</tr>
+<tr>
+<td>frozenset(s)</td>
+<td>转换为不可变集合</td>
+</tr>
+<tr>
+<td>chr(x)</td>
+<td>将一个整数转换为一个字符</td>
+</tr>
+<tr>
+<td>unichr(x)</td>
+<td>将一个整数转换为Unicode字符</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>将一个字符转换为它的整数值</td>
+</tr>
+<tr>
+<td>hex(x)</td>
+<td>将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td>oct(x)</td>
+<td>将一个整数转换为一个八进制字符串</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><a name="8ba7f5f9"></a></p>
+<h3 id="数据类型转换分类"><a href="#数据类型转换分类" class="headerlink" title="数据类型转换分类"></a>数据类型转换分类</h3><ul>
+<li>数据类型转换一共分为2类：自动数据类型转换(隐式转换)和强制数据类型转换(显示转换)<br><a name="xDZik"></a></li>
+</ul>
+<h4 id="自动数据类型转换-隐式转换"><a href="#自动数据类型转换-隐式转换" class="headerlink" title="自动数据类型转换/隐式转换"></a>自动数据类型转换/隐式转换</h4><ul>
+<li>自动类型转换是程序根据运算要求进行的转换，不需要人工干预 <ul>
+<li>1.自动类型转换不需要人工干预 </li>
+<li>2.自动类型转换多发生在运算或者判断过程中 </li>
+<li>3.转化时向着更加精确的类型转换<pre><code class="hljs python">a = <span class="hljs-number">1.0</span>
+b = <span class="hljs-number">1</span>
+c = a + b
+print(<span class="hljs-built_in">type</span>(a), <span class="hljs-built_in">type</span>(b), <span class="hljs-built_in">type</span>(c)</code></pre>
+<a name="dR9zy"></a></li>
+</ul>
+</li>
+</ul>
+<h4 id="强制类型转换-显示转换"><a href="#强制类型转换-显示转换" class="headerlink" title="强制类型转换/显示转换"></a>强制类型转换/显示转换</h4><ul>
+<li><p>根据程序需要，由编写程序人员人为改变数据类型的方式就是强制数据类型转换。<br /></p>
+</li>
+<li><p>int() 将其他类型转化为整型<br /></p>
+<pre><code class="hljs yaml"><span class="hljs-number">1</span><span class="hljs-string">.数字整型转化之后，还是原来的味道</span>
+<span class="hljs-number">2</span><span class="hljs-string">.浮点类型转化之后，舍去小数部分</span>
+<span class="hljs-number">3</span><span class="hljs-string">.布尔值转化之后</span> <span class="hljs-literal">True</span> <span class="hljs-string">-&gt;</span> <span class="hljs-number">1</span> <span class="hljs-literal">False</span><span class="hljs-string">-&gt;0</span>
+<span class="hljs-number">4</span><span class="hljs-string">.字符串转换，仅纯整型字符串可以转化（浮点型或者带有其他字符都不可以转化）</span>
+<span class="hljs-number">5</span><span class="hljs-string">.复数不可以转换</span></code></pre>
+</li>
+<li><p>float() 将其他类型转化为浮点型</p>
+<pre><code class="hljs yaml"><span class="hljs-number">1</span><span class="hljs-string">.整型转换之后变为浮点型，后面+.0</span>
+<span class="hljs-number">2</span><span class="hljs-string">.浮点数不需要转化，转化也不会变化</span>
+<span class="hljs-number">3</span><span class="hljs-string">.布尔值转化</span> <span class="hljs-literal">True</span><span class="hljs-string">-&gt;1.0</span>  <span class="hljs-literal">False</span> <span class="hljs-string">-&gt;0.0</span>
+<span class="hljs-number">4</span><span class="hljs-string">.字符串，纯整型字符串和纯浮点型字符串可以转换，其他都不可以</span></code></pre>
+</li>
+<li><p>complex() 将其他数据转化为复数</p>
+<pre><code class="hljs angelscript"><span class="hljs-number">1.</span>整型转换之后变为 （整型+<span class="hljs-number">0</span>j）
+<span class="hljs-number">2.</span>浮点型转换之后变为(浮点型 + <span class="hljs-number">0</span>j)
+<span class="hljs-number">3.</span>布尔值转化之后 True-&gt;（<span class="hljs-number">1</span>+<span class="hljs-number">0</span>j） False(<span class="hljs-number">0</span>j)
+<span class="hljs-number">4.</span>字符串，纯整型和浮点型字符串可以转化，其他都不行
+<span class="hljs-number">5.</span>复数，无需转换</code></pre>
+</li>
+<li><p>bool() 将其他类型转化为布尔值</p>
+<pre><code class="hljs yaml"><span class="hljs-comment">#下面转化为布尔值false的情况</span>
+    <span class="hljs-number">1</span><span class="hljs-string">.整型</span>   <span class="hljs-number">0</span>
+    <span class="hljs-number">2</span><span class="hljs-string">.浮点型</span>  <span class="hljs-number">0.0</span>
+    <span class="hljs-number">3</span><span class="hljs-string">.复数</span>  <span class="hljs-number">0</span><span class="hljs-string">+0j</span>
+    <span class="hljs-number">4</span><span class="hljs-string">.布尔</span>  <span class="hljs-literal">False</span>
+    <span class="hljs-number">5</span><span class="hljs-string">.字符串</span>  <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-string">空字符串</span>
+    <span class="hljs-number">6</span><span class="hljs-string">.列表</span>   [] <span class="hljs-string">空列表</span>
+    <span class="hljs-number">7</span><span class="hljs-string">.元组</span>   <span class="hljs-string">()空元组</span>
+    <span class="hljs-number">8</span><span class="hljs-string">.字典</span>   &#123;&#125; <span class="hljs-string">空字典</span>
+    <span class="hljs-number">9</span><span class="hljs-string">.集合</span>   <span class="hljs-string">set()</span> <span class="hljs-string">空集合</span></code></pre>
+</li>
+<li><p>str() 将其他类型转化为字符串</p>
+<ul>
+<li>所有转换均改变类型为字符串，表示方式依旧不变</li>
+</ul>
+</li>
+<li><p>list() 将其他类型转化为列表类型</p>
+<ul>
+<li>在python中有5中可迭代序列，可以互相转换，他们分别是：</li>
+<li>字符串，列表，元组，字典，集合<pre><code class="hljs python">var = (<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-string">&#x27;李四&#x27;</span>,<span class="hljs-string">&#x27;王老五&#x27;</span>)
+newvar = <span class="hljs-built_in">list</span>(var)
+newvar的值为 [<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-string">&#x27;李四&#x27;</span>,<span class="hljs-string">&#x27;王老五&#x27;</span>]</code></pre>
+</li>
+</ul>
+</li>
+<li><p><code>注意：</code></p>
+<ul>
+<li>1.字符串转换时每个字符变成列表中的一个值</li>
+<li>2.字典类型转换时，仅将字典的键部分转换成列表，忽略值部分</li>
+</ul>
+</li>
+<li><p>tuple() 将其他类型转化为元组类型<br /></p>
+<pre><code class="hljs python">var = &#123;<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-string">&#x27;李四&#x27;</span>,<span class="hljs-string">&#x27;王老五&#x27;</span>&#125;
+newvar = <span class="hljs-built_in">tuple</span>(var)
+newvar的值为 (<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-string">&#x27;李四&#x27;</span>,<span class="hljs-string">&#x27;王老五&#x27;</span>)</code></pre>
+</li>
+<li><p><code>注意：</code></p>
+<ul>
+<li>1.字符串转换时每个字符变成元组中的一个值</li>
+<li>2.字典类型转换时，仅将字典的键部分转换成元组，忽略值部分</li>
+</ul>
+</li>
+<li><p>set（） 将其他类型转化为集合类型</p>
+<pre><code class="hljs haxe"><span class="hljs-keyword">var</span> = [<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-string">&#x27;李四&#x27;</span>,<span class="hljs-string">&#x27;王老五&#x27;</span>]
+<span class="hljs-keyword">new</span><span class="hljs-type">var</span> = <span class="hljs-keyword">set</span>(<span class="hljs-keyword">var</span>)
+<span class="hljs-keyword">new</span><span class="hljs-type">var</span>的值为 &#123;<span class="hljs-string">&#x27;张三&#x27;</span>,<span class="hljs-string">&#x27;李四&#x27;</span>,<span class="hljs-string">&#x27;王老五&#x27;</span>&#125;  <span class="hljs-meta">#值的顺序不定</span></code></pre>
+</li>
+<li><p><code>注意：</code></p>
+<ul>
+<li>1.字符串转换时每个字符变成集合中的一个值</li>
+<li>2.字典类型转换时，仅将字典的键部分转换集合，忽略值部分</li>
+</ul>
+</li>
+<li><p>dict() 将其他类型转换为字典类型</p>
+</li>
+<li><p>其他类型转化为字典时需要按照指定的格式才可以转化：（列表和元组的组合可以）</p>
+<pre><code class="hljs scheme">[[<span class="hljs-symbol">&#x27;cat</span>&#x27;, <span class="hljs-symbol">&#x27;黑猫警长</span>&#x27;], [<span class="hljs-symbol">&#x27;mouse</span>&#x27;, <span class="hljs-symbol">&#x27;一只耳</span>&#x27;], [<span class="hljs-symbol">&#x27;next</span>&#x27;, <span class="hljs-symbol">&#x27;请看夏季</span>&#x27;]]
+[(<span class="hljs-symbol">&#x27;cat</span>&#x27;, <span class="hljs-symbol">&#x27;黑猫警长</span>&#x27;), （<span class="hljs-symbol">&#x27;mouse</span>&#x27;, <span class="hljs-symbol">&#x27;一只耳</span><span class="hljs-symbol">&#x27;）</span>, （<span class="hljs-symbol">&#x27;next</span>&#x27;, <span class="hljs-symbol">&#x27;请看夏季</span><span class="hljs-symbol">&#x27;）</span>]</code></pre>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Python/">Python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/Python%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97-%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/">
+                        <span class="hidden-mobile">Python入门系列-写在前面</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: '5d74195a285decc87a8b',
+          clientSecret: '6d3760948a26c7c804d51936f433135edfd18de9',
+          repo: 'Diors-Po.github.io',
+          owner: 'Diors-Po',
+          admin: ["Diors-Po"],
+          id: 'af6892a769ed64dddd9149362a90cc08',
+          language: 'zh-CN',
+          labels: ["Gitalk"],
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        });
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="http://beian.miit.gov.cn/" target="_blank"
+       rel="nofollow noopener">皖ICP备2020019690号-1</a>
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

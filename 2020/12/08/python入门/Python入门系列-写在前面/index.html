@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Go程序设计语言-(一)入门 - Diors.Po&#39;s Blog</title>
+  <title>Python入门系列-写在前面 - Diors.Po&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -158,12 +158,12 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://third-part-tool.oss-cn-shanghai.aliyuncs.com/images/index_bg_1.jpg') no-repeat center center;
+         style="background: url('http://oss.diorspo.cn/Fn5iqx29hI2RMMucPlAygVLW3kVY') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Go程序设计语言-(一)入门">
+            <span class="h2" id="subtitle" title="Python入门系列-写在前面">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-11-24 23:40" pubdate>
-        2020年11月24日 晚上
+      <time datetime="2020-12-08 18:45" pubdate>
+        2020年12月8日 晚上
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      954 字
+      609 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      6
        分钟
     </span>
   
@@ -225,80 +225,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Go程序设计语言-(一)入门</h1>
+            <h1 style="display: none">Python入门系列-写在前面</h1>
             
             <div class="markdown-body">
-              <p><img src="http://oss.diorspo.cn/fiveyears.jpg" srcset="/img/loading.gif" alt="Golang">  </p>
-<h2 id="简单谈谈为啥要学习Golang"><a href="#简单谈谈为啥要学习Golang" class="headerlink" title="简单谈谈为啥要学习Golang"></a>简单谈谈为啥要学习Golang</h2><p>很久之前就听说Golang在业内越来越受欢迎，使用它作为主要开发语言的厂商也逐渐增多，比如字节跳动基本都是Golang开发为主。       </p>
-<p><img src="http://oss.diorspo.cn/QQ20201125-001925%402x.png" srcset="/img/loading.gif" alt="2020年10月TIOBE排行"></p>
-<p>2019年4月22日，发生了一件乌龙事件，哔哩哔哩的后端代码被上传到了GitHub（虽然不是新版本），当时凑热闹下载代码看了一眼，小破站的服务端也是使用Golang进行开发，是近两年才进行的重构；另外，今年暑期在阿里云实习期间也发现团队部分项目也根据需要使用了Golang进行开发，而不是一味再拘泥于Java；由此可见，Golang的优良特性吸引了越来越多的开发者投向其怀抱，我平时接触比较多的Docker、Promethus等等开源项目也都是Golang开发。因此，基于趋势和自己的兴趣，利用最后几个月学生生涯去拓展一下技术栈，似乎是不错的选择。  </p>
-<hr>
-<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>略过简单的安装步骤，写一个HelloWorld      </p>
-<pre><code class="hljs Go"><span class="hljs-keyword">package</span> main
-
-<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
-
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>  &#123;
-	fmt.Println(<span class="hljs-string">&quot;Hello World&quot;</span>)
-&#125;</code></pre>
-
-<p>与可以看，到Java类似，主要还是三个部分，首先是包声明<code>package main</code>，然后导入依赖包<code>import &quot;fmt&quot;</code>，最后是具体代码。值得新手注意的一点是Golang对import的内容有严格的要求，<strong>导入的包必须被使用，否则会编译出错</strong>，这是为了防止程序演化中引用不需要的包～～（还好我已经在写Java的过程中养成了快捷键提出无用包的习惯QAQ）<br><img src="http://oss.diorspo.cn/2.png" srcset="/img/loading.gif" alt="无用包编译出错" title="无用包编译出错">     </p>
-<p>Golang中声明为<code>main</code>的包和函数，根据经验可以想到是具有特殊含义的，即程序的入口。  </p>
-<p>函数的声明和Java类似，但似乎更加灵活，以<code>func</code>开头，后面跟函数名，括号中可以放参数列表，返回值支持多个，返回值列表也可为空，如main函数。</p>
-<p>与Java不同，Go不需要以分号结尾，除非有个多个语句或声明出现在同一行。    </p>
-<p>另一个需要值得注意的点，Golang在代码格式上进行了严格的要求，比如在什么地方换行会影响Go代码的解析。例如:  </p>
-<ul>
-<li><code>&#123;</code>必须和关键字<code>func</code>在同一行</li>
-<li>在表达式<code>x+y</code>中，<code>+</code>后面可以有换行，但不能在前面</li>
-</ul>
-<p>为了满足Golang对代码格式的严格要求，go提供了gofmt工具对代码以标准格式重写，可以配置ide自动在保存代码时进行格式化。   </p>
-<p>既然是HelloWorld，也就必不可少的认识一下Go提供的一系列command，在命令行中输入<code>go -h</code>可以看到，一些常用的命令，如<code>run</code>,<code>build</code>,<code>fmt</code>……在开发中可以根据需要使用。</p>
-<pre><code class="hljs bash">Go is a tool <span class="hljs-keyword">for</span> managing Go <span class="hljs-built_in">source</span> code.
-Usage:
-        go &lt;<span class="hljs-built_in">command</span>&gt; [arguments]
-The commands are:
-
-        bug         start a bug report
-        build       compile packages and dependencies
-        clean       remove object files and cached files
-        doc         show documentation <span class="hljs-keyword">for</span> package or symbol
-        env         <span class="hljs-built_in">print</span> Go environment information
-        fix         update packages to use new APIs
-        fmt         gofmt (reformat) package sources
-        generate    generate Go files by processing <span class="hljs-built_in">source</span>
-        get         add dependencies to current module and install them
-        install     compile and install packages and dependencies
-        list        list packages or modules
-        mod         module maintenance
-        run         compile and run Go program
-        <span class="hljs-built_in">test</span>        <span class="hljs-built_in">test</span> packages
-        tool        run specified go tool
-        version     <span class="hljs-built_in">print</span> Go version
-        vet         report likely mistakes <span class="hljs-keyword">in</span> packages
-
-Use <span class="hljs-string">&quot;go help &lt;command&gt;&quot;</span> <span class="hljs-keyword">for</span> more information about a <span class="hljs-built_in">command</span>.
-Additional <span class="hljs-built_in">help</span> topics:
-        buildconstraint build constraints
-        buildmode       build modes
-        c               calling between Go and C
-        cache           build and <span class="hljs-built_in">test</span> caching
-        environment     environment variables
-        filetype        file types
-        go.mod          the go.mod file
-        gopath          GOPATH environment variable
-        gopath-get      legacy GOPATH go get
-        goproxy         module proxy protocol
-        importpath      import path syntax
-        modules         modules, module versions, and more
-        module-get      module-aware go get
-        module-auth     module authentication using go.sum
-        module-private  module configuration <span class="hljs-keyword">for</span> non-public modules
-        packages        package lists and patterns
-        testflag        testing flags
-        testfunc        testing <span class="hljs-built_in">functions</span>
-Use <span class="hljs-string">&quot;go help &lt;topic&gt;&quot;</span> <span class="hljs-keyword">for</span> more information about that topic.</code></pre>
-
-
+              <p><img src="http://oss.diorspo.cn/Fpdl2F28wgb-5Q6s9EkFs8mC9RMy" srcset="/img/loading.gif">  </p>
+<p>上上周，由黄老师介绍了一个去企业讲授Python入门课程的活，这个活是一个培训机构找过来的，他们专门给各类政府企业单位的人提供各种各样的IT培训课程，讲师都是从业内找一些经验丰富的从业人员来签约授课，黄老师以前给他们讲过几次课，所以找过来。这次可能是因为黄老师看不上这点小钱，也可能是知道了我“穷”的现状，将这个活计推给了我。</p>
+<p>讲道理，虽然我一直有过搞编程培训班的想法，但我想的是搞少儿编程，还真没想过给企业里的工程师讲课，毕竟我自己也是个小菜鸡，万一别人来一句“配钥匙5元一把，您配吗？”，岂不是很尴尬？</p>
+<p><img src="http://oss.diorspo.cn/FvmqczbAavwvOUzmQL07KthhhnHO" srcset="/img/loading.gif"></p>
+<p>不过黄老师一直给我鼓气说没问题的，受众是一群没有多少软件研发经验的工程师，他们平时主要接触的都是电力设备的运维，极少数了解一些C++相关的知识，并没有实际编码的经验。因此，我也就硬着头皮上了，花了一周的时间自己复习了一下Python的基础知识，并且准备了一份讲义，毕竟不能给黄老师丢人。   </p>
+<p>准备时间只有一周，做PPT太耗费时间，实习期间习惯了使用语雀写文档，语雀的演示模式也挺好用，在和培训机构以及客户沟通之后，同意了使用语雀文档进行教学。所以我就边复习、边学习、边写文档，完成了一份Python入门的讲义。  </p>
+<p><img src="http://oss.diorspo.cn/Fu5CO9HFTFtZ-w_Fw3vZVFJAk6iI" srcset="/img/loading.gif">  </p>
+<p>讲义准备毕竟也花了不少精力，讲课效果也还不错，作为一次性用品似乎有点浪费，所以想到干脆也放到博客来，因此，博客的计划中先得插播一些Python入门的文章。   </p>
+<p>由于是从语雀导出Markdown移植过来的，格式上或许有一些没有仔细核对的地方，请读者见谅～ 另外，讲义是针对入门学习者准备的，内容比较基础，大佬勿喷哦⚠️   </p>
+<p>后面会根据讲义的章节顺序更新到博客上来，目录如下，有兴趣的朋友也可以直接阅读<a target="_blank" rel="noopener" href="https://www.yuque.com/books/share/dc8ddc73-c071-404d-b58d-bcbc18933e02#">语雀文档</a>。  </p>
+<p><img src="http://oss.diorspo.cn/Fi0J1mwFjtgFzNY1PD6jQ52gITYz" srcset="/img/loading.gif"></p>
 
             </div>
             <hr>
@@ -308,7 +248,7 @@ Use <span class="hljs-string">&quot;go help &lt;topic&gt;&quot;</span> <span cla
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Golang/">Golang</a>
+                      <a class="hover-with-bg" href="/categories/%E9%BB%98%E8%AE%A4/">默认</a>
                     
                   </div>
                 
@@ -316,9 +256,7 @@ Use <span class="hljs-string">&quot;go help &lt;topic&gt;&quot;</span> <span cla
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Golang/">Golang</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
                     
                   </div>
                 
@@ -331,9 +269,9 @@ Use <span class="hljs-string">&quot;go help &lt;topic&gt;&quot;</span> <span cla
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/1.1.Python%E7%AE%80%E4%BB%8B%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/1.3.%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python入门-1.1Python简介与环境搭建</span>
+                        <span class="hidden-mobile">Python入门-1.3 数据类型</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -341,8 +279,8 @@ Use <span class="hljs-string">&quot;go help &lt;topic&gt;&quot;</span> <span cla
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/04/20/2020%E6%98%A5%E6%8B%9B%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/">
-                        <span class="hidden-mobile">2020春招暑期实习-总结</span>
+                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/1.2.%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="hidden-mobile">Python入门-1.2 基础语法入门</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -368,7 +306,7 @@ Use <span class="hljs-string">&quot;go help &lt;topic&gt;&quot;</span> <span cla
           repo: 'Diors-Po.github.io',
           owner: 'Diors-Po',
           admin: ["Diors-Po"],
-          id: '6f124c2db33eaa8309bf263a1cc869ab',
+          id: 'e6b88ba552dd61bd57d041c4fb99ff3c',
           language: 'zh-CN',
           labels: ["Gitalk"],
           perPage: 10,

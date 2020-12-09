@@ -1,0 +1,849 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" type="image/png" href="http://oss.diorspo.cn/logo.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Python入门-1.2 基础语法入门 - Diors.Po&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <img src="http://oss.diorspo.cn/logo.png" srcset="/img/loading.gif" style="height: 55px;"/>
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Diors.Po</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://third-part-tool.oss-cn-shanghai.aliyuncs.com/images/index_bg_1.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Python入门-1.2 基础语法入门">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-08 18:42" pubdate>
+        2020年12月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      31
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python入门-1.2 基础语法入门</h1>
+            
+            <div class="markdown-body">
+              <h1 id="1-2-基础语法入门"><a href="#1-2-基础语法入门" class="headerlink" title="1.2 基础语法入门"></a>1.2 基础语法入门</h1><p><a name="Tbm4p"></a></p>
+<h2 id="明确几个基本概念"><a href="#明确几个基本概念" class="headerlink" title="明确几个基本概念"></a>明确几个基本概念</h2><p><a name="Qe41y"></a></p>
+<h5 id="（1）表达式"><a href="#（1）表达式" class="headerlink" title="（1）表达式"></a>（1）表达式</h5><p>        表达式就是一个类似于数学公式的东西<br />        比如：10 + 5   8 - 4<br />        表达式一般仅仅用了计算一些结果，不会对程序产生实质性的影响<br />        如果在交互模式中输入一个表达式，解释器会自动将表达式的结果输出<br><a name="6pVB7"></a></p>
+<h5 id="（2）语句"><a href="#（2）语句" class="headerlink" title="（2）语句"></a>（2）语句</h5><p>        在程序中语句一般需要完成某种功能，比如打印信息、获取信息、为变量赋值。<br />        比如：</p>
+<pre><code class="hljs python">print()
+<span class="hljs-built_in">input</span>()
+a = <span class="hljs-number">10</span></code></pre>
+<p>        语句的执行一般会对程序产生一定的影响<br />        在交互模式中不一定会输出语句的执行结果  <br><a name="ZsTfB"></a></p>
+<h5 id="（3）程序（program）"><a href="#（3）程序（program）" class="headerlink" title="（3）程序（program）"></a>（3）程序（program）</h5><p>        程序就是由一条一条的语句和一条一条的表达式构成的。<br><a name="DsnRP"></a></p>
+<h5 id="（4）函数（function）"><a href="#（4）函数（function）" class="headerlink" title="（4）函数（function）"></a>（4）函数（function）</h5><p>        函数就是一种语句，函数专门用来完成特定的功能<br />        函数长的形如：xxx()          <br />        函数的分类：<br />            内置函数<br />                - 由Python解释器提供的函数，可以在Python中直接使用<br />            自定义函数    <br />                - 由程序员自主的创建的函数<br />        当我们需要完成某个功能时，就可以去调用内置函数，或者自定义函数<br />        函数的两个要素：<br />            参数<br />                - ()中的内容就是函数的参数<br />                - 函数中可以没有参数，也可以有多个参数，多个参数之间使用,隔开<br />            返回值        <br />                - 返回值是函数的返回结果，不是所有的函数都有返回值<br /></p>
+<p><a name="Hn2ZT"></a></p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p><a name="iGvjC"></a></p>
+<h3 id="第一个Python程序"><a href="#第一个Python程序" class="headerlink" title="第一个Python程序"></a>第一个Python程序</h3><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: cp-1252 -*-</span>
+<span class="hljs-comment"># Python文件首行可以指定编码格式，Python3默认是utf-8</span>
+
+print(<span class="hljs-string">&quot;Hello World&quot;</span>) <span class="hljs-comment"># 打印Hello World</span>
+
+print(<span class="hljs-string">&quot;Hello, everyone!\n \</span>
+<span class="hljs-string">	I am so glad to introduce Python to you!&quot;</span>)
+
+a = <span class="hljs-literal">True</span>
+<span class="hljs-keyword">if</span> a:
+	print(<span class="hljs-string">&quot;True&quot;</span>)
+<span class="hljs-keyword">else</span>:
+	print(<span class="hljs-string">&quot;False&quot;</span>)
+</code></pre>
+
+<ul>
+<li>在Python中严格区分大小写</li>
+<li>Python中的每一行就是一条语句，每条语句以换行结束</li>
+<li>Python中每一行语句不要过长（规范中建议每行不要超过80个字符）</li>
+<li>一条语句可以分多行编写，多行编写时语句后边以”&quot;结尾  </li>
+<li>Python是缩进严格的语言，以缩进来表示代码块，所以在Python中不要随便写缩进  </li>
+<li>在Python中使用#来表示注释，”#”后的内容都属于注释，注释的内容将会被解释器所忽略</li>
+</ul>
+<p><a name="fLhD9"></a></p>
+<h3 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h3><p><a name="LhHML"></a></p>
+<h5 id="input-输入："><a href="#input-输入：" class="headerlink" title="input()输入："></a>input()输入：</h5><ul>
+<li><p>input()的小括号中放入的是，提示信息，用来在获取数据之前给用户的一个简单提示</p>
+</li>
+<li><p>input()在从键盘获取了数据以后，会存放到等号右边的变量中</p>
+</li>
+<li><p>input()会把用户输入的任何值都作为字符串来对待</p>
+</li>
+<li><p>注意：在python2中还有一个raw_input()输入，但到python3中没有了</p>
+<pre><code class="hljs python"><span class="hljs-built_in">str</span> = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入：&quot;</span>);
+<span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;你输入的内容是: &quot;</span>, <span class="hljs-built_in">str</span>)</code></pre>
+<p><a name="NtZDW"></a></p>
+<h5 id="print-输出："><a href="#print-输出：" class="headerlink" title="print()输出："></a>print()输出：</h5></li>
+<li><p>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 end=””</p>
+<pre><code class="hljs python">x=<span class="hljs-string">&quot;a&quot;</span>
+y=<span class="hljs-string">&quot;b&quot;</span>
+<span class="hljs-comment"># 换行输出</span>
+print( x )
+print( y )
+
+print(<span class="hljs-string">&#x27;---------&#x27;</span>)
+<span class="hljs-comment"># 不换行输出</span>
+print( x, end=<span class="hljs-string">&quot; &quot;</span> )
+print( y, end=<span class="hljs-string">&quot; &quot;</span> )
+print()
+
+<span class="hljs-comment"># 同时输出多个变量</span>
+print(x,y)</code></pre>
+<p><a name="yijxN"></a></p>
+<h5 id="format格式化函数："><a href="#format格式化函数：" class="headerlink" title="format格式化函数："></a>format格式化函数：</h5></li>
+<li><p>格式化字符串的函数 str.format()，它增强了字符串格式化的功能</p>
+</li>
+<li><p>基本语法是通过 {} 和 : 来代替以前的 % 。</p>
+<pre><code class="hljs python"><span class="hljs-comment"># 不设置指定位置，按默认顺序</span>
+template = <span class="hljs-string">&quot;name: &#123;&#125;, age: &#123;&#125;&quot;</span>
+print(template.<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;John&quot;</span>,<span class="hljs-string">&quot;18&quot;</span>))
+
+<span class="hljs-comment"># 设置指定位置</span>
+template = <span class="hljs-string">&quot;name: &#123;0&#125;, age: &#123;1&#125; \nWelcome, &#123;0&#125;&quot;</span>
+print(template.<span class="hljs-built_in">format</span>(<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-string">&quot;18&quot;</span>))
+
+<span class="hljs-comment"># 设置指定参数名</span>
+template = <span class="hljs-string">&quot;name: &#123;name&#125;, age: &#123;age&#125;&quot;</span>
+print(template.<span class="hljs-built_in">format</span>(name=<span class="hljs-string">&quot;John&quot;</span>, age=<span class="hljs-string">&quot;18&quot;</span>))
+
+<span class="hljs-comment"># 通过字典设置参数</span>
+template = <span class="hljs-string">&quot;name: &#123;name&#125;, age: &#123;age&#125;&quot;</span>
+john = &#123;<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>:<span class="hljs-string">&quot;18&quot;</span>&#125;
+print(template.<span class="hljs-built_in">format</span>(**john)) <span class="hljs-comment"># **表示接收的参数作为字典来处理，*表示接收的参数作为元组来处理</span>
+
+<span class="hljs-comment"># 通过列表索引设置参数</span>
+my_list = [<span class="hljs-string">&#x27;John&#x27;</span>, <span class="hljs-string">&#x27;18&#x27;</span>]
+template = <span class="hljs-string">&quot;name: &#123;0[0]&#125;, age: &#123;0[1]&#125;&quot;</span> <span class="hljs-comment"># 第一个数字0，用于表示format参数，可以传入多个列表参数，中括号中表示数组下标</span>
+print(template.<span class="hljs-built_in">format</span>(my_list))
+
+<span class="hljs-comment"># 练习：尝试混用上述方式~</span>
+
+<span class="hljs-comment"># 数字格式化</span>
+print(<span class="hljs-string">&quot;PI: &#123;:.2f&#125;&quot;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">3.1415926</span>))
+</code></pre>
+
+
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数字</th>
+<th>格式</th>
+<th>输出</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.1415926</td>
+<td>{:.2f}</td>
+<td>3.14</td>
+<td>保留小数点后两位</td>
+</tr>
+<tr>
+<td>3.1415926</td>
+<td>{:+.2f}</td>
+<td>+3.14</td>
+<td>带符号保留小数点后两位</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>{:+.2f}</td>
+<td>-1.00</td>
+<td>带符号保留小数点后两位</td>
+</tr>
+<tr>
+<td>2.71828</td>
+<td>{:.0f}</td>
+<td>3</td>
+<td>不带小数</td>
+</tr>
+<tr>
+<td>5</td>
+<td>{:0&gt;2d}</td>
+<td>05</td>
+<td>数字补零 (填充左边, 宽度为2)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>{:x&lt;4d}</td>
+<td>5xxx</td>
+<td>数字补x (填充右边, 宽度为4)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>{:x&lt;4d}</td>
+<td>10xx</td>
+<td>数字补x (填充右边, 宽度为4)</td>
+</tr>
+<tr>
+<td>1000000</td>
+<td>{:,}</td>
+<td>1,000,000</td>
+<td>以逗号分隔的数字格式</td>
+</tr>
+<tr>
+<td>0.25</td>
+<td>{:.2%}</td>
+<td>25.00%</td>
+<td>百分比格式</td>
+</tr>
+<tr>
+<td>1000000000</td>
+<td>{:.2e}</td>
+<td>1.00e+09</td>
+<td>指数记法</td>
+</tr>
+<tr>
+<td>13</td>
+<td>{:10d}</td>
+<td>13</td>
+<td>右对齐 (默认, 宽度为10)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>{:&lt;10d}</td>
+<td>13</td>
+<td>左对齐 (宽度为10)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>{:^10d}</td>
+<td>13</td>
+<td>中间对齐 (宽度为10)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>‘{:b}’.format(11)<br />‘{:d}’.format(11)<br />‘{:o}’.format(11)<br />‘{:x}’.format(11)<br />‘{:#x}’.format(11)<br />‘{:#X}’.format(11)</td>
+<td>1011<br />11<br />13<br />b<br />0xb<br />0XB</td>
+<td>进制</td>
+</tr>
+</tbody></table>
+<p><a name="ee656aa1"></a></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
+<li>python中单行注释采用 # 开头。<pre><code class="hljs python"><span class="hljs-comment"># -*- coding: UTF-8 -*-</span>
+<span class="hljs-comment"># 文件名：test.py</span>
+<span class="hljs-comment"># 第一个注释</span>
+print(<span class="hljs-string">&quot;Hello, Python!&quot;</span>);  <span class="hljs-comment"># 第二个注释</span></code></pre>
+输出结果：<pre><code class="hljs python">Hello, Python!</code></pre>
+
+</li>
+</ul>
+<p><br />注释可以在语句或表达式行末：</p>
+<pre><code class="hljs python">name = <span class="hljs-string">&quot;Madisetti&quot;</span> <span class="hljs-comment"># 这是一个注释</span></code></pre>
+
+
+<ul>
+<li><p>python 中多行注释使用三个单引号(‘’’)或三个双引号(“””)。</p>
+<pre><code class="hljs python"><span class="hljs-comment"># -*- coding: UTF-8 -*-</span>
+<span class="hljs-comment"># 文件名：test.py</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string">这是多行注释，使用单引号。</span>
+<span class="hljs-string">这是多行注释，使用单引号。</span>
+<span class="hljs-string">这是多行注释，使用单引号。</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string">&quot;&quot;&quot;</span>
+<span class="hljs-string">这是多行注释，使用双引号。</span>
+<span class="hljs-string">这是多行注释，使用双引号。</span>
+<span class="hljs-string">这是多行注释，使用双引号。</span>
+<span class="hljs-string">&quot;&quot;&quot;</span></code></pre>
+<p><a name="XLGj5"></a></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p><a name="qClRL"></a></p>
+<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3></li>
+<li><p>在Python里, <code>标识符: 由字母、数字、下划线组成,但不能以数字开头</code>。  <br /></p>
+</li>
+<li><p>Python 中的标识符是区分大小写的。<br /></p>
+</li>
+<li><p>特殊标识符：</p>
+<ul>
+<li>以下划线开头的标识符是有特殊意义的。以单下划线开头 <code>_foo</code> 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 <code>from xxx import *</code> 而导入；<br /></li>
+<li>以双下划线开头的 <code>__foo</code> 代表类的私有成员；以双下划线开头和结尾的 <code>__foo__</code> 代表 Python 里特殊方法专用的标识，如 <code>__init__()</code> 代表类的构造函数。<br /></li>
+</ul>
+</li>
+<li><p>python保留字： 保留字即关键字，我们不能把它们用作任何标识符名称。Python 的标准库提供了一个 keyword 模块，可以输出当前版本的所有关键字：</p>
+<pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> keyword
+<span class="hljs-meta">&gt;&gt;&gt; </span>keyword.kwlist
+[<span class="hljs-string">&#x27;False&#x27;</span>, <span class="hljs-string">&#x27;None&#x27;</span>, <span class="hljs-string">&#x27;True&#x27;</span>, <span class="hljs-string">&#x27;and&#x27;</span>, <span class="hljs-string">&#x27;as&#x27;</span>, <span class="hljs-string">&#x27;assert&#x27;</span>, <span class="hljs-string">&#x27;break&#x27;</span>, <span class="hljs-string">&#x27;class&#x27;</span>, <span class="hljs-string">&#x27;continue&#x27;</span>, 
+<span class="hljs-string">&#x27;def&#x27;</span>, <span class="hljs-string">&#x27;del&#x27;</span>, <span class="hljs-string">&#x27;elif&#x27;</span>, <span class="hljs-string">&#x27;else&#x27;</span>, <span class="hljs-string">&#x27;except&#x27;</span>, <span class="hljs-string">&#x27;finally&#x27;</span>, <span class="hljs-string">&#x27;for&#x27;</span>, <span class="hljs-string">&#x27;from&#x27;</span>, <span class="hljs-string">&#x27;global&#x27;</span>, 
+<span class="hljs-string">&#x27;import&#x27;</span>, <span class="hljs-string">&#x27;in&#x27;</span>, <span class="hljs-string">&#x27;is&#x27;</span>, <span class="hljs-string">&#x27;lambda&#x27;</span>, <span class="hljs-string">&#x27;nonlocal&#x27;</span>, <span class="hljs-string">&#x27;not&#x27;</span>, <span class="hljs-string">&#x27;or&#x27;</span>, <span class="hljs-string">&#x27;pass&#x27;</span>, <span class="hljs-string">&#x27;raise&#x27;</span>, <span class="hljs-string">&#x27;if&#x27;</span>,
+<span class="hljs-string">&#x27;return&#x27;</span>,<span class="hljs-string">&#x27;try&#x27;</span>, <span class="hljs-string">&#x27;while&#x27;</span>, <span class="hljs-string">&#x27;with&#x27;</span>, <span class="hljs-string">&#x27;yield&#x27;</span>]</code></pre>
+
+
+</li>
+</ul>
+<p><a name="K7Zco"></a></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</li>
+<li>在 Python 中，变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。<br /></li>
+<li>等号（=）用来给变量赋值。<br /></li>
+<li>等号（=）运算符左边是一个变量名,等号（=）运算符右边是存储在变量中的值。例如：<br /><pre><code class="hljs python">counter = <span class="hljs-number">100</span>          <span class="hljs-comment"># 整型变量</span>
+miles   = <span class="hljs-number">1000.0</span>       <span class="hljs-comment"># 浮点型变量</span>
+name    = <span class="hljs-string">&quot;demo&quot;</span>     <span class="hljs-comment"># 字符串</span>
+
+print(counter)
+print(miles)
+print(name)</code></pre>
+执行以上程序会输出如下结果：<pre><code class="hljs angelscript"><span class="hljs-number">100</span>
+<span class="hljs-number">1000.0</span>
+demo</code></pre>
+
+
+</li>
+</ul>
+<blockquote>
+<p>TIPS:</p>
+<ol>
+<li>变量命名应既简短又具有描述性。例如，name比n好，student_name比s_n好。</li>
+<li>慎用小写字母l和大写字母O，它们很容易被看错成数字1和0</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>Python允许你同时为多个变量赋值。例如：</p>
+<pre><code class="hljs python">a = b = c = <span class="hljs-number">1</span></code></pre>
+</li>
+<li><p>以上实例，创建一个整型对象，值为1，三个变量被分配到相同的内存空间上。</p>
+</li>
+</ul>
+<ul>
+<li><p>您也可以为多个对象指定多个变量。例如：</p>
+<pre><code class="hljs python">a, b, c = <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;demo&quot;</span></code></pre>
+</li>
+<li><p>以上实例，两个整型对象 1 和 2 的分配给变量 a 和 b，字符串对象 “demo” 分配给变量 c。</p>
+</li>
+</ul>
+<br />
+
+<p><a name="avDhA"></a></p>
+<h3 id="行与缩进"><a href="#行与缩进" class="headerlink" title="行与缩进"></a>行与缩进</h3><ul>
+<li><p>python最具特色的就是使用缩进来表示代码块，不需要使用大括号({})。</p>
+</li>
+<li><p>缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。实例如下：</p>
+<pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:
+    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;True&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;False&quot;</span>)</code></pre>
+</li>
+<li><p>以下代码最后一行语句缩进数的空格数不一致，会导致运行错误：</p>
+<pre><code class="hljs python"><span class="hljs-keyword">if</span> <span class="hljs-literal">True</span>:
+    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;Answer&quot;</span>)
+    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;True&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;Answer&quot;</span>)
+  <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;False&quot;</span>)    <span class="hljs-comment"># 缩进不一致，会导致运行错误</span></code></pre>
+</li>
+<li><p>以上程序由于缩进不一致，执行后会出现类似以下错误：</p>
+<pre><code class="hljs bash">File <span class="hljs-string">&quot;test.py&quot;</span>, line 6
+    <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;False&quot;</span>)    <span class="hljs-comment"># 缩进不一致，会导致运行错误</span>
+                                      ^
+IndentationError: unindent does not match any outer indentation level</code></pre>
+
+
+</li>
+</ul>
+<p><a name="Y7deq"></a></p>
+<h5 id="多行语句"><a href="#多行语句" class="headerlink" title="多行语句"></a>多行语句</h5><ul>
+<li>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠()来实现多行语句，例如：<pre><code class="hljs python">total = item_one + \
+        item_two + \
+        item_three</code></pre>
+
+
+</li>
+</ul>
+<ul>
+<li>在 [], {}, 或 () 中的多行语句，不需要使用反斜杠()，例如：<pre><code class="hljs python">total = [<span class="hljs-string">&#x27;item_one&#x27;</span>, <span class="hljs-string">&#x27;item_two&#x27;</span>, <span class="hljs-string">&#x27;item_three&#x27;</span>,
+        <span class="hljs-string">&#x27;item_four&#x27;</span>, <span class="hljs-string">&#x27;item_five&#x27;</span>]</code></pre>
+<a name="xXVLq"></a><br><a name="E9gRm"></a></li>
+</ul>
+<h5 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h5><ul>
+<li>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。<br /></li>
+<li>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。<br /></li>
+<li>记住：空行也是程序代码的一部分。<br /></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Python/">Python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/Python%E5%85%A5%E9%97%A8%E7%B3%BB%E5%88%97-%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python入门系列-写在前面</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/1.1.Python%E7%AE%80%E4%BB%8B%E4%B8%8E%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                        <span class="hidden-mobile">Python入门-1.1Python简介与环境搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: '5d74195a285decc87a8b',
+          clientSecret: '6d3760948a26c7c804d51936f433135edfd18de9',
+          repo: 'Diors-Po.github.io',
+          owner: 'Diors-Po',
+          admin: ["Diors-Po"],
+          id: '60aa5891aa62b269c02e542b69b76eb0',
+          language: 'zh-CN',
+          labels: ["Gitalk"],
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        });
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="http://beian.miit.gov.cn/" target="_blank"
+       rel="nofollow noopener">皖ICP备2020019690号-1</a>
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
