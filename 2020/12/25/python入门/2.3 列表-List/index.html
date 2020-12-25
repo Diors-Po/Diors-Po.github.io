@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" type="image/png" href="http://oss.diorspo.cn/logo.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Python入门-2.3 列表(List) - Diors.Po&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":80,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <img src="http://oss.diorspo.cn/logo.png" srcset="/img/loading.gif" style="height: 55px;"/>
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Diors.Po</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://third-part-tool.oss-cn-shanghai.aliyuncs.com/images/index_bg_1.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Python入门-2.3 列表(List)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-25 23:38" pubdate>
+        2020年12月25日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python入门-2.3 列表(List)</h1>
+            
+            <div class="markdown-body">
+              <h1 id="3-列表（List）"><a href="#3-列表（List）" class="headerlink" title="3. 列表（List）"></a>3. 列表（List）</h1><h2 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>所谓序列，指的是一块<strong>可存放多个值的连续内存空间</strong>，这些值<strong>按一定顺序排列</strong>，可通过每个值所在位置的编号（称为索引）访问它们。</p>
+<p>可以将它看做是一家旅店，那么店中的每个房间就如同序列存储数据的一个个内存空间，每个房间所特有的房间号就相当于索引值。也就是说，通过房间号（索引）我们可以找到这家旅店（序列）中的每个房间（内存空间）。<br /><br><br />在 Python中，序列类型包括<strong>字符串、列表、元组、集合和字典</strong>，这些序列支持以下几种通用的操作，但比较特殊的是，<strong>集合和字典不支持索引、切片、相加和相乘操作</strong>。(字符串也是一种序列，它也可以通过所以访问，并且支持切片等操作)</p>
+<h3 id="序列操作"><a href="#序列操作" class="headerlink" title="序列操作"></a>序列操作</h3><h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>序列中，每个元素都有属于自己的编号（索引）。从起始元素开始，索引值从 0 开始递增，如图 1 所示。<br /><img src="http://oss.diorspo.cn/FkIQmItTPwMe_nYGLmt9gDurLcyC" srcset="/img/loading.gif"><br />图 1 序列索引值示意图<br /><br><br />除此之外，Python 还支持索引值是负数，此类索引是从右向左计数，换句话说，从最后一个元素开始计数，从索引值 -1 开始，如图 2 所示。<br /><img src="http://oss.diorspo.cn/FsM3FYKkg2lGVNrW0nwyaR9zuLdI" srcset="/img/loading.gif"><br />图 2 负值索引示意图<br /></p>
+<h4 id="相加"><a href="#相加" class="headerlink" title="相加"></a>相加</h4><p>Python 中，支持两种类型相同的序列使用“+”运算符做相加操作，它会将两个序列进行连接，但不会去除重复元素。</p>
+<h4 id="相乘"><a href="#相乘" class="headerlink" title="相乘"></a>相乘</h4><p>Python 中，使用数字 n 乘以一个序列会生成新的序列，其内容为原来序列被重复 n 次的结果。</p>
+<h4 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h4><p>切片操作是访问序列中元素的另一种方法，它可以访问一定范围内的元素，通过切片操作，可以生成一个新的序列。</p>
+<pre><code class="hljs ada">sname[start : <span class="hljs-type">end</span> : <span class="hljs-type">step</span>]</code></pre>
+<p>其中，各个参数的含义分别是：</p>
+<ul>
+<li>sname：表示序列的名称；</li>
+<li>start：表示切片的开始索引位置（包括该位置），此参数也可以不指定，会默认为 0，也就是从序列的开头进行切片；</li>
+<li>end：表示切片的结束索引位置（不包括该位置），如果不指定，则默认为序列的长度；</li>
+<li>step：表示在切片过程中，隔几个存储位置（包含当前位置）取一次元素，也就是说，如果 step 的值大于 1，则在进行切片去序列元素时，会“跳跃式”的取元素。如果省略设置 step 的值，则最后一个冒号就可以省略。</li>
+</ul>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>在实际开发中，经常需要将一组（不只一个）数据存储起来，以便后边的代码使用。类似于数组（Array），它就可以把多个数据挨个存储到一起，通过数组下标可以访问数组中的每个元素。</p>
+<p>需要明确的是，Python中没有数组，但是加入了更加强大的列表。<br />如果把数组看做是一个集装箱，那么 Python 的列表就是一个工厂的仓库。</p>
+<ul>
+<li>列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。</li>
+<li>列表是写在方括号<code>[]</code>之间、用逗号分隔开的元素列表。</li>
+</ul>
+<p><img src="http://oss.diorspo.cn/FtoHLvzGM7ULC6Bg1zVsjuAGOmpK" srcset="/img/loading.gif" alt="列表结构"><br /></p>
+<h4 id="创建列表"><a href="#创建列表" class="headerlink" title="创建列表"></a>创建列表</h4><p>（1）使用[]直接创建：使用<code>[ ]</code>创建列表后，一般使用<code>=</code>将它赋值给某个变量<br />（2）使用list()函数创建：Python 还提供了一个内置的函数 list()，使用它可以将其它数据类型转换为列表类型。<br /></p>
+<pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3</span>
+list1 = [ <span class="hljs-string">&#x27;abcd&#x27;</span>, <span class="hljs-number">786</span> , <span class="hljs-number">2.23</span>, <span class="hljs-string">&#x27;demo&#x27;</span>, <span class="hljs-number">70.2</span> ]
+list2 = [<span class="hljs-number">123</span>, <span class="hljs-string">&#x27;demo&#x27;</span>]
+
+list3 = <span class="hljs-built_in">list</span>(<span class="hljs-string">&quot;hello&quot;</span>) 	<span class="hljs-comment"># list()函数创建列表，将字符串转换成列表</span>
+
+<span class="hljs-built_in">print</span> (list3)            <span class="hljs-comment"># 输出完整列表</span>
+<span class="hljs-built_in">print</span> (list1[<span class="hljs-number">0</span>])         <span class="hljs-comment"># 输出列表第一个元素</span>
+<span class="hljs-built_in">print</span> (list1[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>])       <span class="hljs-comment"># 从第二个开始输出到第三个元素</span>
+<span class="hljs-built_in">print</span> (list1[<span class="hljs-number">2</span>:])        <span class="hljs-comment"># 输出从第三个元素开始的所有元素</span>
+<span class="hljs-built_in">print</span> (list2 * <span class="hljs-number">2</span>)    	 <span class="hljs-comment"># 输出两次列表</span>
+<span class="hljs-built_in">print</span> (list1 + list2)    <span class="hljs-comment"># 连接列表</span></code></pre>
+
+<br />
+
+
+<h4 id="修改元素"><a href="#修改元素" class="headerlink" title="修改元素"></a>修改元素</h4><p>与Python字符串不一样的是，列表中的元素是可以改变的</p>
+<ul>
+<li>使用索引修改</li>
+<li>通过切片批量修改<pre><code class="hljs python">a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+a[<span class="hljs-number">0</span>] = <span class="hljs-number">9</span>
+a[<span class="hljs-number">2</span>:<span class="hljs-number">5</span>] = [<span class="hljs-number">13</span>, <span class="hljs-number">14</span>, <span class="hljs-number">15</span>]
+print(a)</code></pre>
+
+
+
+</li>
+</ul>
+<h4 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h4><p>Python提供了内置函数append()和insert()来向列表中添加元素</p>
+<ul>
+<li>list.append(obj) 在列表末尾插入新的元素</li>
+<li>list.insert(index, obj)在指定位置插入新的元素<pre><code class="hljs python">a = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]
+a.append(<span class="hljs-number">4</span>)
+a.insert(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)
+print(a)</code></pre>
+
+
+
+</li>
+</ul>
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><ul>
+<li>可以使用del关键字删除</li>
+<li>可以通过切片赋空列表</li>
+</ul>
+<pre><code class="hljs python">a = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>]
+print(a)
+
+<span class="hljs-keyword">del</span> a[<span class="hljs-number">0</span>]
+print(a)
+
+<span class="hljs-keyword">del</span> a[<span class="hljs-number">0</span>:<span class="hljs-number">3</span>]
+print(a)
+
+a[<span class="hljs-number">0</span>:<span class="hljs-number">3</span>] = []
+print(a)</code></pre>
+
+<p><br />注意：</p>
+<ul>
+<li>1、List写在方括号之间，元素用逗号隔开。</li>
+<li>2、和字符串一样，list可以被索引和切片。</li>
+<li>3、List可以使用+操作符进行拼接。</li>
+<li>4、List中的元素是可以改变的。</li>
+</ul>
+<h4 id="列表的遍历操作"><a href="#列表的遍历操作" class="headerlink" title="列表的遍历操作"></a>列表的遍历操作</h4><pre><code class="hljs angelscript"><span class="hljs-number">1.</span>使用<span class="hljs-keyword">for</span>...<span class="hljs-keyword">in</span> 遍历列表
+    <span class="hljs-keyword">for</span> 变量 <span class="hljs-keyword">in</span> 列表：
+        使用变量
+<span class="hljs-number">2.</span>使用<span class="hljs-keyword">while</span>循环遍历列表
+    i = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> i&lt;len(列表):
+        使用列表中的元素(列表[i])
+        i += <span class="hljs-number">1</span>
+<span class="hljs-number">3.</span>同等长度二级列表的遍历
+    列表 = [[值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>],[值<span class="hljs-number">1</span>,值<span class="hljs-number">2</span>],....]
+    <span class="hljs-keyword">for</span> 变量<span class="hljs-number">1</span>,变量<span class="hljs-number">2</span> <span class="hljs-keyword">in</span> 列表:
+        使用变量<span class="hljs-number">1</span>和变量<span class="hljs-number">2</span>
+    注意：变量<span class="hljs-number">1</span>取二级列表中的第一个值，变量<span class="hljs-number">2</span>取第二个值
+<span class="hljs-number">4.</span>非同等长度的二级列表的遍历
+    列表 = [[值<span class="hljs-number">1</span>，值<span class="hljs-number">2</span>]，[值<span class="hljs-number">1</span>，值<span class="hljs-number">2</span>,值<span class="hljs-number">3</span>],[值]...]
+    <span class="hljs-keyword">for</span> 变量<span class="hljs-number">1</span> <span class="hljs-keyword">in</span> 列表：
+        <span class="hljs-keyword">for</span> 变量<span class="hljs-number">2</span> <span class="hljs-keyword">in</span> 变量<span class="hljs-number">1</span>：
+            使用变量<span class="hljs-number">2</span>(变量<span class="hljs-number">2</span>是二级列表中的每个值)</code></pre>
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><pre><code class="hljs python">list1 = [ <span class="hljs-string">&#x27;abcd&#x27;</span>, <span class="hljs-number">786</span> , <span class="hljs-number">2.23</span>, <span class="hljs-string">&#x27;demo&#x27;</span>, <span class="hljs-number">70.2</span> ]
+<span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> list1:
+    print(item)</code></pre>
+
+<h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><h4 id="Python列表脚本操作符："><a href="#Python列表脚本操作符：" class="headerlink" title="Python列表脚本操作符："></a>Python列表脚本操作符：</h4><ul>
+<li>列表对 + 和 <em>的操作符与字符串相似。+ 号用于组合列表，</em> 号用于重复列表。<table>
+<thead>
+<tr>
+<th>Python 表达式</th>
+<th>结果</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len([1, 2, 3])</td>
+<td>3</td>
+<td>长度</td>
+</tr>
+<tr>
+<td>[1, 2, 3] + [4, 5, 6]</td>
+<td>[1, 2, 3, 4, 5, 6]</td>
+<td>组合</td>
+</tr>
+<tr>
+<td>[‘Hi!’] * 4</td>
+<td>[‘Hi!’, ‘Hi!’, ‘Hi!’, ‘Hi!’]</td>
+<td>重复</td>
+</tr>
+<tr>
+<td>3 in [1, 2, 3]</td>
+<td>True</td>
+<td>元素是否存在于列表中</td>
+</tr>
+<tr>
+<td>for x in [1, 2, 3]: print(x, end=” “)</td>
+<td>1 2 3</td>
+<td>迭代</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="Python列表截取与拼接："><a href="#Python列表截取与拼接：" class="headerlink" title="　Python列表截取与拼接："></a>　Python列表截取与拼接：</h4><ul>
+<li>Python的列表截取与字符串操作类型，如下所示：L=[‘Google’, ‘Python’, ‘Taobao’]<table>
+<thead>
+<tr>
+<th>Python</th>
+<th>表达式 结果</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>L[2]</td>
+<td>‘Taobao’</td>
+<td>读取第三个元素</td>
+</tr>
+<tr>
+<td>L[-2]</td>
+<td>‘Python’</td>
+<td>从右侧开始读取倒数第二个元素: count from the right</td>
+</tr>
+<tr>
+<td>L[1:]</td>
+<td>[‘Python’, ‘Taobao’]</td>
+<td>输出从第二个元素开始后的所有元素</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="Python列表函数-amp-方法"><a href="#Python列表函数-amp-方法" class="headerlink" title="Python列表函数&amp;方法:"></a>Python列表函数&amp;方法:</h4><ul>
+<li><p>Python包含以下函数:</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>函数名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>len(list)</td>
+<td>列表元素个数</td>
+</tr>
+<tr>
+<td>2</td>
+<td>max(list)</td>
+<td>返回列表元素最大值</td>
+</tr>
+<tr>
+<td>3</td>
+<td>min(list)</td>
+<td>返回列表元素最小值</td>
+</tr>
+<tr>
+<td>4</td>
+<td>list(seq)</td>
+<td>将元组转换为列表</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>list包含以下方法:</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>list.append(obj)</td>
+<td>在列表末尾添加新的对象</td>
+</tr>
+<tr>
+<td>2</td>
+<td>list.count(obj)</td>
+<td>统计某个元素在列表中出现的次数</td>
+</tr>
+<tr>
+<td>3</td>
+<td>list.extend(seq)</td>
+<td>在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>list.index(obj)</td>
+<td>从列表中找出某个值第一个匹配项的索引位置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>list.insert(index, obj)</td>
+<td>将对象插入列表</td>
+</tr>
+<tr>
+<td>6</td>
+<td>list.pop(obj=list[-1])</td>
+<td>移除列表中的一个元素（默认最后一个元素），并且返回该元素的值</td>
+</tr>
+<tr>
+<td>7</td>
+<td>list.remove(obj)</td>
+<td>移除列表中某个值的第一个匹配项</td>
+</tr>
+<tr>
+<td>8</td>
+<td>list.reverse()</td>
+<td>反向列表中元素</td>
+</tr>
+<tr>
+<td>9</td>
+<td>list.sort([func])</td>
+<td>对原列表进行排序</td>
+</tr>
+<tr>
+<td>10</td>
+<td>list.clear()</td>
+<td>清空列表</td>
+</tr>
+<tr>
+<td>11</td>
+<td>list.copy()</td>
+<td>复制列表</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%BB%98%E8%AE%A4/">默认</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/12/25/python%E5%85%A5%E9%97%A8/2.4%20%E5%85%83%E7%BB%84-Tuple/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python入门-2.4 元组(Tuple)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/25/python%E5%85%A5%E9%97%A8/2.2%20%E5%AD%97%E7%AC%A6%E4%B8%B2-String/">
+                        <span class="hidden-mobile">Python入门-2.2 字符串(String)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: '5d74195a285decc87a8b',
+          clientSecret: '6d3760948a26c7c804d51936f433135edfd18de9',
+          repo: 'Diors-Po.github.io',
+          owner: 'Diors-Po',
+          admin: ["Diors-Po"],
+          id: '13aeb653afb92bb53c593e83c4533199',
+          language: 'zh-CN',
+          labels: ["Gitalk"],
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        });
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="http://beian.miit.gov.cn/" target="_blank"
+       rel="nofollow noopener">皖ICP备2020019690号-1</a>
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Python入门系列-写在前面 - Diors.Po&#39;s Blog</title>
+  <title>Python入门-2.1 数字(Number) - Diors.Po&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -158,12 +158,12 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('http://oss.diorspo.cn/WechatIMG260.jpeg') no-repeat center center;
+         style="background: url('https://third-part-tool.oss-cn-shanghai.aliyuncs.com/images/index_bg_1.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Python入门系列-写在前面">
+            <span class="h2" id="subtitle" title="Python入门-2.1 数字(Number)">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-08 18:45" pubdate>
-        2020年12月8日 晚上
+      <time datetime="2020-12-25 23:21" pubdate>
+        2020年12月25日 晚上
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      609 字
+      929 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      11
        分钟
     </span>
   
@@ -225,20 +225,206 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python入门系列-写在前面</h1>
+            <h1 style="display: none">Python入门-2.1 数字(Number)</h1>
             
             <div class="markdown-body">
-              <p><img src="http://oss.diorspo.cn/Fpdl2F28wgb-5Q6s9EkFs8mC9RMy" srcset="/img/loading.gif">  </p>
-<p>上上周，由黄老师介绍了一个去企业讲授Python入门课程的活，这个活是一个培训机构找过来的，他们专门给各类政府企业单位的人提供各种各样的IT培训课程，讲师都是从业内找一些经验丰富的从业人员来签约授课，黄老师以前给他们讲过几次课，所以找过来。这次可能是因为黄老师看不上这点小钱，也可能是知道了我“穷”的现状，将这个活计推给了我。</p>
-<p>讲道理，虽然我一直有过搞编程培训班的想法，但我想的是搞少儿编程，还真没想过给企业里的工程师讲课，毕竟我自己也是个小菜鸡，万一别人来一句“配钥匙5元一把，您配吗？”，岂不是很尴尬？</p>
-<p><img src="http://oss.diorspo.cn/FvmqczbAavwvOUzmQL07KthhhnHO" srcset="/img/loading.gif"></p>
-<p>不过黄老师一直给我鼓气说没问题的，受众是一群没有多少软件研发经验的工程师，他们平时主要接触的都是电力设备的运维，极少数了解一些C++相关的知识，并没有实际编码的经验。因此，我也就硬着头皮上了，花了一周的时间自己复习了一下Python的基础知识，并且准备了一份讲义，毕竟不能给黄老师丢人。   </p>
-<p>准备时间只有一周，做PPT太耗费时间，实习期间习惯了使用语雀写文档，语雀的演示模式也挺好用，在和培训机构以及客户沟通之后，同意了使用语雀文档进行教学。所以我就边复习、边学习、边写文档，完成了一份Python入门的讲义。  </p>
-<p><img src="http://oss.diorspo.cn/Fu5CO9HFTFtZ-w_Fw3vZVFJAk6iI" srcset="/img/loading.gif">  </p>
-<p>讲义准备毕竟也花了不少精力，讲课效果也还不错，作为一次性用品似乎有点浪费，所以想到干脆也放到博客来，因此，博客的计划中先得插播一些Python入门的文章。   </p>
-<p>由于是从语雀导出Markdown移植过来的，格式上或许有一些没有仔细核对的地方，请读者见谅～ 另外，讲义是针对入门学习者准备的，内容比较基础，大佬勿喷哦⚠️   </p>
-<p>后面会根据讲义的章节顺序更新到博客上来，目录如下，有兴趣的朋友也可以直接阅读<a target="_blank" rel="noopener" href="https://www.yuque.com/books/share/dc8ddc73-c071-404d-b58d-bcbc18933e02#">语雀文档</a>。  </p>
-<p><img src="http://oss.diorspo.cn/Fi0J1mwFjtgFzNY1PD6jQ52gITYz" srcset="/img/loading.gif"></p>
+              <h1 id="2-1-数字（Number）"><a href="#2-1-数字（Number）" class="headerlink" title="2.1 数字（Number）"></a>2.1 数字（Number）</h1><h4 id="Number（数字）"><a href="#Number（数字）" class="headerlink" title="Number（数字）"></a>Number（数字）</h4><ul>
+<li>Python3 支持 int、float、bool、complex（复数）。</li>
+<li>在Python 3里，只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。</li>
+<li>像大多数语言一样，数值类型的赋值和计算都是很直观的。<blockquote>
+<p>注意：在 Python2 中是没有布尔型的，它用数字 0 表示 False，用 1 表示 True。<br>到 Python3 中，把 True 和 False 定义成关键字了，但它们的值还是 1 和 0，它们可以和数字相加。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>当你指定一个值时，Number 对象就会被创建：</p>
+<pre><code class="hljs python">var1 = <span class="hljs-number">1</span>
+var2 = <span class="hljs-number">10</span></code></pre>
+</li>
+<li><p>您也可以使用del语句删除一些对象引用。</p>
+<ul>
+<li>del语句的语法是：</li>
+<li>del var1,var2….,varN</li>
+</ul>
+</li>
+<li><p>您可以通过使用del语句删除单个或多个对象。例如</p>
+<pre><code class="hljs python"><span class="hljs-keyword">del</span> var
+<span class="hljs-keyword">del</span> var_a, var_b</code></pre>
+<h5 id="整数的进制"><a href="#整数的进制" class="headerlink" title="整数的进制:"></a>整数的进制:</h5><pre><code class="hljs bash"><span class="hljs-comment"># 输出其他进制数值</span>
+bin(255) <span class="hljs-comment">#255的二进制</span>
+oct(255) <span class="hljs-comment">#255的八进制</span>
+hex(255) <span class="hljs-comment">#255的十六进制</span>
+a=0b10   <span class="hljs-comment">#赋值二进制数值</span>
+<span class="hljs-built_in">print</span>(a)
+
+a=0o10   <span class="hljs-comment">#赋值八进制数值</span>
+<span class="hljs-built_in">print</span>(a)
+
+a=0x10   <span class="hljs-comment">#赋值十六进制数值</span>
+<span class="hljs-built_in">print</span>(a)</code></pre>
+
+</li>
+</ul>
+<h4 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h4><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值 ( 描述 )</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>abs(x)</td>
+<td>返回数字的绝对值，如abs(-10) 返回 10</td>
+</tr>
+<tr>
+<td>ceil(x)</td>
+<td>返回数字的上入整数，如math.ceil(4.1) 返回 5</td>
+</tr>
+<tr>
+<td>cmp(x, y)</td>
+<td>如果 x &lt; y 返回 -1, 如果 x == y 返回 0, 如果 x &gt; y 返回 1。<br />Python 3 已废弃 。使用 使用 (x&gt;y)-(x&lt;y) 替换。</td>
+</tr>
+<tr>
+<td>exp(x)</td>
+<td>返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045</td>
+</tr>
+<tr>
+<td>fabs(x)</td>
+<td>返回数字的绝对值，如math.fabs(-10) 返回10.0</td>
+</tr>
+<tr>
+<td>floor(x)</td>
+<td>返回数字的下舍整数，如math.floor(4.9)返回 4</td>
+</tr>
+<tr>
+<td>log(x)</td>
+<td>如math.log(math.e)返回1.0,math.log(100,10)返回2.0</td>
+</tr>
+<tr>
+<td>log10(x)</td>
+<td>返回以10为基数的x的对数，如math.log10(100)返回 2.0</td>
+</tr>
+<tr>
+<td>max(x1, x2,…)</td>
+<td>返回给定参数的最大值，参数可以为序列。</td>
+</tr>
+<tr>
+<td>min(x1, x2,…)</td>
+<td>返回给定参数的最小值，参数可以为序列。</td>
+</tr>
+<tr>
+<td>modf(x)</td>
+<td>返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。</td>
+</tr>
+<tr>
+<td>pow(x, y)</td>
+<td><code>x**y</code> 运算后的值。</td>
+</tr>
+<tr>
+<td>round(x [,n])</td>
+<td>返回浮点数x的四舍五入值，如给出n值，则代表舍入到小数点后的位数。</td>
+</tr>
+<tr>
+<td>sqrt(x)</td>
+<td>返回数字x的平方根。</td>
+</tr>
+</tbody></table>
+<h4 id="随机数函数"><a href="#随机数函数" class="headerlink" title="随机数函数"></a>随机数函数</h4><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>choice(seq)</td>
+<td>从序列的元素中随机挑选一个元素，比如random.choice(range(10))，从0到9中随机挑选一个整数。</td>
+</tr>
+<tr>
+<td>randrange ([start,] stop [,step])</td>
+<td>从指定范围内，按指定基数递增的集合中获取一个随机数，基数缺省值为1</td>
+</tr>
+<tr>
+<td>random()</td>
+<td>随机生成下一个实数，它在[0,1)范围内。</td>
+</tr>
+<tr>
+<td>seed([x])</td>
+<td>改变随机数生成器的种子seed。如果你不了解其原理，你不必特别去设定seed，Python会帮你选择seed。</td>
+</tr>
+<tr>
+<td>shuffle(lst)</td>
+<td>将序列的所有元素随机排序</td>
+</tr>
+<tr>
+<td>uniform(x, y)</td>
+<td>随机生成下一个实数，它在[x,y]范围内。</td>
+</tr>
+</tbody></table>
+<h4 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h4><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>acos(x)</td>
+<td>返回x的反余弦弧度值。</td>
+</tr>
+<tr>
+<td>asin(x)</td>
+<td>返回x的反正弦弧度值。</td>
+</tr>
+<tr>
+<td>atan(x)</td>
+<td>返回x的反正切弧度值。</td>
+</tr>
+<tr>
+<td>atan2(y, x)</td>
+<td>返回给定的 X 及 Y 坐标值的反正切值。</td>
+</tr>
+<tr>
+<td>cos(x)</td>
+<td>返回x的弧度的余弦值。</td>
+</tr>
+<tr>
+<td>hypot(x, y)</td>
+<td>返回欧几里德范数 sqrt(x_x + y_y)。</td>
+</tr>
+<tr>
+<td>sin(x)</td>
+<td>返回的x弧度的正弦值。</td>
+</tr>
+<tr>
+<td>tan(x)</td>
+<td>返回x弧度的正切值。</td>
+</tr>
+<tr>
+<td>degrees(x)</td>
+<td>将弧度转换为角度,如degrees(math.pi/2) ， 返回90.0</td>
+</tr>
+<tr>
+<td>radians(x)</td>
+<td>将角度转换为弧度</td>
+</tr>
+</tbody></table>
+<h4 id="数学常量"><a href="#数学常量" class="headerlink" title="数学常量"></a>数学常量</h4><table>
+<thead>
+<tr>
+<th>常量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pi</td>
+<td>数学常量 pi（圆周率，一般以π来表示）</td>
+</tr>
+<tr>
+<td>e</td>
+<td>数学常量 e，e即自然常数（自然常数）。</td>
+</tr>
+</tbody></table>
 
             </div>
             <hr>
@@ -256,6 +442,8 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
                       <a class="hover-with-bg" href="/tags/Python/">Python</a>
                     
                   </div>
@@ -269,9 +457,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/1.3%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                      <a href="/2020/12/25/python%E5%85%A5%E9%97%A8/2.2%20%E5%AD%97%E7%AC%A6%E4%B8%B2-String/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python入门-1.3 数据类型</span>
+                        <span class="hidden-mobile">Python入门-2.2 字符串(String)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -279,8 +467,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/1.2%20%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
-                        <span class="hidden-mobile">Python入门-1.2 基础语法入门</span>
+                      <a href="/2020/12/10/python%E5%85%A5%E9%97%A8/1.5%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">
+                        <span class="hidden-mobile">Python入门-1.5 流程控制</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -306,7 +494,7 @@
           repo: 'Diors-Po.github.io',
           owner: 'Diors-Po',
           admin: ["Diors-Po"],
-          id: 'e6b88ba552dd61bd57d041c4fb99ff3c',
+          id: '5f500a38c740d978de5870b19bcd20af',
           language: 'zh-CN',
           labels: ["Gitalk"],
           perPage: 10,

@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Python入门系列-写在前面 - Diors.Po&#39;s Blog</title>
+  <title>Python入门-2.4 元组(Tuple) - Diors.Po&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -158,12 +158,12 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('http://oss.diorspo.cn/WechatIMG260.jpeg') no-repeat center center;
+         style="background: url('https://third-part-tool.oss-cn-shanghai.aliyuncs.com/images/index_bg_1.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Python入门系列-写在前面">
+            <span class="h2" id="subtitle" title="Python入门-2.4 元组(Tuple)">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-08 18:45" pubdate>
-        2020年12月8日 晚上
+      <time datetime="2020-12-25 23:47" pubdate>
+        2020年12月25日 晚上
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      609 字
+      803 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      10
        分钟
     </span>
   
@@ -225,20 +225,160 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Python入门系列-写在前面</h1>
+            <h1 style="display: none">Python入门-2.4 元组(Tuple)</h1>
             
             <div class="markdown-body">
-              <p><img src="http://oss.diorspo.cn/Fpdl2F28wgb-5Q6s9EkFs8mC9RMy" srcset="/img/loading.gif">  </p>
-<p>上上周，由黄老师介绍了一个去企业讲授Python入门课程的活，这个活是一个培训机构找过来的，他们专门给各类政府企业单位的人提供各种各样的IT培训课程，讲师都是从业内找一些经验丰富的从业人员来签约授课，黄老师以前给他们讲过几次课，所以找过来。这次可能是因为黄老师看不上这点小钱，也可能是知道了我“穷”的现状，将这个活计推给了我。</p>
-<p>讲道理，虽然我一直有过搞编程培训班的想法，但我想的是搞少儿编程，还真没想过给企业里的工程师讲课，毕竟我自己也是个小菜鸡，万一别人来一句“配钥匙5元一把，您配吗？”，岂不是很尴尬？</p>
-<p><img src="http://oss.diorspo.cn/FvmqczbAavwvOUzmQL07KthhhnHO" srcset="/img/loading.gif"></p>
-<p>不过黄老师一直给我鼓气说没问题的，受众是一群没有多少软件研发经验的工程师，他们平时主要接触的都是电力设备的运维，极少数了解一些C++相关的知识，并没有实际编码的经验。因此，我也就硬着头皮上了，花了一周的时间自己复习了一下Python的基础知识，并且准备了一份讲义，毕竟不能给黄老师丢人。   </p>
-<p>准备时间只有一周，做PPT太耗费时间，实习期间习惯了使用语雀写文档，语雀的演示模式也挺好用，在和培训机构以及客户沟通之后，同意了使用语雀文档进行教学。所以我就边复习、边学习、边写文档，完成了一份Python入门的讲义。  </p>
-<p><img src="http://oss.diorspo.cn/Fu5CO9HFTFtZ-w_Fw3vZVFJAk6iI" srcset="/img/loading.gif">  </p>
-<p>讲义准备毕竟也花了不少精力，讲课效果也还不错，作为一次性用品似乎有点浪费，所以想到干脆也放到博客来，因此，博客的计划中先得插播一些Python入门的文章。   </p>
-<p>由于是从语雀导出Markdown移植过来的，格式上或许有一些没有仔细核对的地方，请读者见谅～ 另外，讲义是针对入门学习者准备的，内容比较基础，大佬勿喷哦⚠️   </p>
-<p>后面会根据讲义的章节顺序更新到博客上来，目录如下，有兴趣的朋友也可以直接阅读<a target="_blank" rel="noopener" href="https://www.yuque.com/books/share/dc8ddc73-c071-404d-b58d-bcbc18933e02#">语雀文档</a>。  </p>
-<p><img src="http://oss.diorspo.cn/Fi0J1mwFjtgFzNY1PD6jQ52gITYz" srcset="/img/loading.gif"></p>
+              <h1 id="2-4-元组（Tuple）"><a href="#2-4-元组（Tuple）" class="headerlink" title="2.4 元组（Tuple）"></a>2.4 元组（Tuple）</h1><p>元组（tuple）是 Python中另一个重要的序列结构，和列表类似，元组也是由一系列按特定顺序排序的元素组成。<br />元组和列表（list）的不同之处在于：</p>
+<ul>
+<li>列表的元素是可以更改的，包括修改元素值，删除和插入元素，所以列表是可变序列；</li>
+<li>而元组一旦被创建，它的元素就不可更改了，所以元组是不可变序列。</li>
+</ul>
+<p>元组也可以看做是不可变的列表，通常情况下，元组用于保存无需修改的内容。<br /><br><br /><img src="http://oss.diorspo.cn/Fkp9Zg2NYYK2mqbXjnnV1ZEWBAsc" srcset="/img/loading.gif" alt="元组格式"></p>
+<ul>
+<li>元组写在小括号()里，元素之间用逗号隔开。</li>
+<li>元组中的元素类型也可以不相同</li>
+</ul>
+<h3 id="元组的创建与访问"><a href="#元组的创建与访问" class="headerlink" title="元组的创建与访问"></a>元组的创建与访问</h3><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3</span>
+tuple1 = ( <span class="hljs-string">&#x27;abcd&#x27;</span>, <span class="hljs-number">786</span> , <span class="hljs-number">2.23</span>, <span class="hljs-string">&#x27;demo&#x27;</span>, <span class="hljs-number">70.2</span>  )
+tinytuple = (<span class="hljs-number">123</span>, <span class="hljs-string">&#x27;demo&#x27;</span>)
+
+tuple2 = <span class="hljs-built_in">tuple</span>(<span class="hljs-string">&quot;hello&quot;</span>)
+<span class="hljs-built_in">print</span> (tuple1)             <span class="hljs-comment"># 输出完整元组</span>
+<span class="hljs-built_in">print</span> (tuple1[<span class="hljs-number">0</span>])          <span class="hljs-comment"># 输出元组的第一个元素</span>
+<span class="hljs-built_in">print</span> (tuple1[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>])        <span class="hljs-comment"># 输出从第二个元素开始到第三个元素</span>
+<span class="hljs-built_in">print</span> (tuple1[<span class="hljs-number">2</span>:])         <span class="hljs-comment"># 输出从第三个元素开始的所有元素</span>
+<span class="hljs-built_in">print</span> (tinytuple * <span class="hljs-number">2</span>)     <span class="hljs-comment"># 输出两次元组</span>
+<span class="hljs-built_in">print</span> (tuple1 + tinytuple) <span class="hljs-comment"># 连接元组</span>
+
+<span class="hljs-string">&#x27;&#x27;&#x27;</span>
+<span class="hljs-string">输出结果：</span>
+<span class="hljs-string">(&#x27;abcd&#x27;, 786, 2.23, &#x27;demo&#x27;, 70.2)</span>
+<span class="hljs-string">abcd</span>
+<span class="hljs-string">(786, 2.23)</span>
+<span class="hljs-string">(2.23, &#x27;demo&#x27;, 70.2)</span>
+<span class="hljs-string">(123, &#x27;demo&#x27;, 123, &#x27;demo&#x27;)</span>
+<span class="hljs-string">(&#x27;abcd&#x27;, 786, 2.23, &#x27;demo&#x27;, 70.2, 123, &#x27;demo&#x27;)</span>
+<span class="hljs-string">&#x27;&#x27;&#x27;</span></code></pre>
+
+
+
+<h4 id="修改元组的元素是非法的"><a href="#修改元组的元素是非法的" class="headerlink" title="修改元组的元素是非法的"></a>修改元组的元素是非法的</h4><pre><code class="hljs python">tup = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>)
+tup[<span class="hljs-number">0</span>] = <span class="hljs-number">11</span>  <span class="hljs-comment"># 修改元组元素的操作是非法的</span></code></pre>
+
+
+<ul>
+<li>虽然tuple的元素不可改变，但它可以包含可变的对象，比如list列表。<pre><code class="hljs python">tup = ([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])
+tup[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>
+print(tup)</code></pre>
+
+</li>
+</ul>
+<h4 id="构造空元组或单个元素元组"><a href="#构造空元组或单个元素元组" class="headerlink" title="构造空元组或单个元素元组"></a>构造空元组或单个元素元组</h4><ul>
+<li>构造包含 0 个或 1 个元素的元组比较特殊，所以有一些额外的语法规则：<pre><code class="hljs python">tup1 = ()    <span class="hljs-comment"># 空元组</span>
+tup2 = (<span class="hljs-number">20</span>,) <span class="hljs-comment"># 一个元素，需要在元素后添加逗号，否则会被识别为表达式运算</span></code></pre>
+
+</li>
+</ul>
+<br />
+
+
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><h4 id="元组运算符"><a href="#元组运算符" class="headerlink" title="元组运算符"></a>元组运算符</h4><ul>
+<li>与字符串一样，元组之间可以使用 + 号和 * 号进行运算。这就意味着他们可以组合和复制，运算后会生成一个新的元组。<table>
+<thead>
+<tr>
+<th>Python 表达式</th>
+<th>结果</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len((1, 2, 3))</td>
+<td>3</td>
+<td>长度</td>
+</tr>
+<tr>
+<td>(1, 2, 3) + (4, 5, 6)</td>
+<td>(1, 2, 3, 4, 5, 6)</td>
+<td>组合</td>
+</tr>
+<tr>
+<td>(‘Hi!’) * 4</td>
+<td>(‘Hi!’, ‘Hi!’, ‘Hi!’, ‘Hi!’)</td>
+<td>重复</td>
+</tr>
+<tr>
+<td>3 in (1, 2, 3)</td>
+<td>True</td>
+<td>元素是否存在于元组中</td>
+</tr>
+<tr>
+<td>for x in (1, 2, 3): print(x, end=” “)</td>
+<td>1 2 3</td>
+<td>迭代</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="元组索引，截取"><a href="#元组索引，截取" class="headerlink" title="　元组索引，截取"></a>　元组索引，截取</h4><ul>
+<li>因为元组也是一个序列，所以我们可以访问元组中的指定位置的元素，也可以截取索引中的一段元素</li>
+<li>如下所示：L=(‘Google’, ‘Python’, ‘Taobao’)<table>
+<thead>
+<tr>
+<th>Python</th>
+<th>表达式 结果</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>L[2]</td>
+<td>‘Taobao’</td>
+<td>读取第三个元素</td>
+</tr>
+<tr>
+<td>L[-2]</td>
+<td>‘Python’</td>
+<td>从右侧开始读取倒数第二个元素: count from the right</td>
+</tr>
+<tr>
+<td>L[1:]</td>
+<td>(‘Python’, ‘Taobao’)</td>
+<td>输出从第二个元素开始后的所有元素</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="元组内置函数"><a href="#元组内置函数" class="headerlink" title="元组内置函数"></a>元组内置函数</h4><ul>
+<li>Python元组包含了以下内置函数:<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>函数名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>len(tuple)</td>
+<td>元组元素个数</td>
+</tr>
+<tr>
+<td>2</td>
+<td>max(tuple)</td>
+<td>返回元组元素最大值</td>
+</tr>
+<tr>
+<td>3</td>
+<td>min(tuple)</td>
+<td>返回元组元素最小值</td>
+</tr>
+<tr>
+<td>4</td>
+<td>tuple(seq)</td>
+<td>将元组可迭代序列转化为元组</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -256,6 +396,8 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
                       <a class="hover-with-bg" href="/tags/Python/">Python</a>
                     
                   </div>
@@ -269,9 +411,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/1.3%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                      <a href="/2020/12/25/python%E5%85%A5%E9%97%A8/2.5%20%E5%AD%97%E5%85%B8-Dict/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python入门-1.3 数据类型</span>
+                        <span class="hidden-mobile">Python入门-2.5 字典(Dictionary)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -279,8 +421,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/08/python%E5%85%A5%E9%97%A8/1.2%20%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">
-                        <span class="hidden-mobile">Python入门-1.2 基础语法入门</span>
+                      <a href="/2020/12/25/python%E5%85%A5%E9%97%A8/2.3%20%E5%88%97%E8%A1%A8-List/">
+                        <span class="hidden-mobile">Python入门-2.3 列表(List)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -306,7 +448,7 @@
           repo: 'Diors-Po.github.io',
           owner: 'Diors-Po',
           admin: ["Diors-Po"],
-          id: 'e6b88ba552dd61bd57d041c4fb99ff3c',
+          id: '376ab0b6a1f85a8491153283f08159b4',
           language: 'zh-CN',
           labels: ["Gitalk"],
           perPage: 10,
